@@ -1,0 +1,30 @@
+{
+  "name": "tvuikit",
+  "version": "0.0.1",
+  "description": "The Void UI kit",
+  "main": "index.js",
+  "keywords": [
+    "ui",
+    "ui-kit",
+    "thevoid",
+    "thevoidcommunity"
+  ],
+  "homepage": "https://github.com/The-Void-Community/tvuikit#readme",
+  "bugs": {
+    "url": "https://github.com/The-Void-Community/tvuikit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Void-Community/tvuikit.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "FOCKUSTY",
+    "email": "viserd.yt@gmail.com",
+    "url": "https://fockusty.vercel.app"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
