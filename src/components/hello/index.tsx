@@ -4,6 +4,4 @@ export const Hello = () => {
       Hello
     </div>
   )
-};
-
-export default Hello;
+}
