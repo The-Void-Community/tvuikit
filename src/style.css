@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --bg-default: #0A0A0A;
+  --bg-component: #00000065;
+  --bg-smooth: #111111;
+
+  --fg-default: #EDEDED;
+  --fg-text: #EDEDED;
+  --fg-miniText: #EDEDED40;
+  --fg-card: #27272790;
+  --fg-component: #27272;
+
+  --btn-default: var(--fg-default);
+  --btn-primary: #2AFF6A80;
+  --btn-danger: #FF000080;
+  --btn-secondary: #00000020;
+  --btn-tetriary: #00000030;
+}
