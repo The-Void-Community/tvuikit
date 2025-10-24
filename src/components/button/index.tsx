@@ -1,8 +1,9 @@
 import type { ReactNode } from "react"
+import { button } from "../../variables/colors/button"
 
 type Props = {
   children: ReactNode,
-  type: string
+  type: keyof typeof button
 }
 
 export const Button = ({
@@ -12,8 +13,8 @@ export const Button = ({
   return (
     <button
       className={[
-        "bg-(--fg-card) px-8 py-4 rounded-lg text-(--btn-${type})",
-        `text-(--btn-${type})`
+        "bg-(--fg-card) px-1 py-2 rounded-lg",
+        `text-(--btn-${type})`,
       ].join(" ")}
     >
       {children}

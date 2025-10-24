@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -5,15 +6,78 @@
   --bg-component: #00000065;
   --bg-smooth: #111111;
 
+  --image-bg: url("./assets/background.png");
+
   --fg-default: #EDEDED;
   --fg-text: #EDEDED;
-  --fg-miniText: #EDEDED40;
+  --fg-mini-text: #EDEDED80;
   --fg-card: #27272790;
-  --fg-component: #27272;
+  --fg-component: #272727;
 
   --btn-default: var(--fg-default);
-  --btn-primary: #2AFF6A80;
-  --btn-danger: #FF000080;
-  --btn-secondary: #00000070;
-  --btn-tetriary: #00000060;
+  --btn-primary: color-mix(in oklab, var(--fg-default) 80%, #2AFF6A 20%);
+  --btn-danger: color-mix(in oklab, var(--fg-default) 60%, #FF0000 40%);
+  --btn-secondary: color-mix(in oklab, var(--fg-default) 80%, #000000 20%);
+  --btn-tetriary: color-mix(in oklab, var(--fg-default) 70%, #000000 30%);
+
+  --fs-h1: 36px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-h5: 18px;
+  --fs-base: 16px;
+  --fs-mini: 14px;
+}
+
+@layer base {
+  .text-base {
+    font-size: var(--fs-base);
+  }
+
+  .text-mini {
+    font-size: var(--fs-mini);
+    color: var(--fg-mini-text);
+  }
+}
+
+@layer components {
+  * {
+    color: var(--fg-default);
+    font-size: var(--fs-base);
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+}
+
+button {
+  cursor: pointer;
 }

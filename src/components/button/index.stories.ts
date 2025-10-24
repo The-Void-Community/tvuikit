@@ -8,7 +8,9 @@ const meta: Meta<typeof Button> = {
   tags: ["autodocs"],
 };
 
-const defaultArgumentTypes: StoryObj<typeof Button>["argTypes"] = {
+type Story = StoryObj<typeof Button>;
+
+const defaultArgumentTypes: Story["argTypes"] = {
   children: {
     type: "string"
   },
@@ -23,7 +25,7 @@ const defaultArgumentTypes: StoryObj<typeof Button>["argTypes"] = {
   }
 };
 
-export const Default: StoryObj<typeof Button> = {
+export const Default: Story = {
   args: {
     children: "I'm button",
     type: "default"
@@ -31,7 +33,7 @@ export const Default: StoryObj<typeof Button> = {
   argTypes: defaultArgumentTypes
 };
 
-export const Primary: StoryObj<typeof Button> = {
+export const Primary: Story = {
   args: {
     children: "I'm button",
     type: "primary"
@@ -39,7 +41,7 @@ export const Primary: StoryObj<typeof Button> = {
   argTypes: defaultArgumentTypes
 };
 
-export const Danger: StoryObj<typeof Button> = {
+export const Danger: Story = {
   args: {
     children: "I'm button",
     type: "danger"
@@ -47,7 +49,7 @@ export const Danger: StoryObj<typeof Button> = {
   argTypes: defaultArgumentTypes
 };
 
-export const Secondary: StoryObj<typeof Button> = {
+export const Secondary: Story = {
   args: {
     children: "I'm button",
     type: "secondary"
@@ -55,7 +57,7 @@ export const Secondary: StoryObj<typeof Button> = {
   argTypes: defaultArgumentTypes
 };
 
-export const Tetriary: StoryObj<typeof Button> = {
+export const Tetriary: Story = {
   args: {
     children: "I'm button",
     type: "tetriary"
