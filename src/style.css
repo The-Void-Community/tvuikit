@@ -41,7 +41,7 @@
 }
 
 @layer components {
-  * {
+  .page {
     color: var(--fg-default);
     font-size: var(--fs-base);
     font-family: "Comfortaa", sans-serif;

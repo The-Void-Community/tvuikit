@@ -3,7 +3,7 @@ import { TextGuideline } from "./text"
 
 export const Guideline = () => {
   return (
-    <div className="bg-(image:--image-bg) flex flex-row gap-8 px-12 py-4 rounded-lg">
+    <div className="bg-(image:--image-bg) flex flex-row gap-8 px-12 py-4 rounded-lg page">
       <TextGuideline />
       <ButtonGuildline />
     </div>

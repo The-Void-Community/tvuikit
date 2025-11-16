@@ -13,7 +13,7 @@ export const Button = ({
   return (
     <button
       className={[
-        "bg-(--fg-card) px-1 py-2 rounded-lg",
+        "bg-(--fg-card) px-1 py-2 rounded-lg page",
         `text-(--btn-${type})`,
       ].join(" ")}
     >
