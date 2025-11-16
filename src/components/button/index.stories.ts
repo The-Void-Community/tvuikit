@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button } from ".";
+import { Page } from "./index";
 import { button } from "../../variables/colors/button";
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof Page> = {
+  component: Page,
   tags: ["autodocs"],
 };
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Page>;
 
 const defaultArgumentTypes: Story["argTypes"] = {
-  children: {
+  buttonChildren: {
     type: "string"
   },
 
-  type: {
+  buttonType: {
     type: "string",
     options: Object.keys(button),
   
@@ -27,40 +27,40 @@ const defaultArgumentTypes: Story["argTypes"] = {
 
 export const Default: Story = {
   args: {
-    children: "I'm button",
-    type: "default"
+    buttonChildren: "I'm button",
+    buttonType: "default"
   },
   argTypes: defaultArgumentTypes
 };
 
 export const Primary: Story = {
   args: {
-    children: "I'm button",
-    type: "primary"
+    buttonChildren: "I'm button",
+    buttonType: "primary"
   },
   argTypes: defaultArgumentTypes
 };
 
 export const Danger: Story = {
   args: {
-    children: "I'm button",
-    type: "danger"
+    buttonChildren: "I'm button",
+    buttonType: "danger"
   },
   argTypes: defaultArgumentTypes
 };
 
 export const Secondary: Story = {
   args: {
-    children: "I'm button",
-    type: "secondary"
+    buttonChildren: "I'm button",
+    buttonType: "secondary"
   },
   argTypes: defaultArgumentTypes
 };
 
 export const Tetriary: Story = {
   args: {
-    children: "I'm button",
-    type: "tetriary"
+    buttonChildren: "I'm button",
+    buttonType: "tetriary"
   },
   argTypes: defaultArgumentTypes
 };

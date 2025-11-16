@@ -1,5 +1,5 @@
 import { button } from "../../variables/colors/button"
-import { Button } from "../button"
+import { Button } from "../button/button"
 
 export const ButtonGuildline = () => {
   return (

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Guideline } from ".";
+import { Page } from ".";
 
-const meta: Meta<typeof Guideline> = {
-  component: Guideline,
+const meta: Meta<typeof Page> = {
+  component: Page,
   tags: ["autodocs"],
 };
 
-type Story = StoryObj<typeof Guideline>;
+type Story = StoryObj<typeof Page>;
 
 export const Default: Story = {
   
