@@ -11,5 +11,5 @@ module.exports = {
         "btn-tetriary": "var(--btn-tetriary)",
       }
     },
-  },
+  }
 }
