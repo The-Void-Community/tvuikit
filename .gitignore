@@ -12,7 +12,8 @@ dist
 dist-ssr
 *.local
 
-./vite.config.ts.*.mjs
+vite.config.ts.*.mjs
+pnpm-lock.yaml
 
 # Editor directories and files
 .vscode/*
