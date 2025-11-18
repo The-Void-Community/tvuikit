@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Page } from "./index";
+import { Page } from "./story";
 import { button } from "../../variables/colors/button";
 
 const meta: Meta<typeof Page> = {
@@ -12,57 +12,57 @@ type Story = StoryObj<typeof Page>;
 
 const defaultArgumentTypes: Story["argTypes"] = {
   buttonChildren: {
-    type: "string"
+    type: "string",
   },
 
   buttonType: {
     type: "string",
     options: Object.keys(button),
-  
+
     control: {
-      type: "select"
-    }
-  }
+      type: "select",
+    },
+  },
 };
 
 export const Default: Story = {
   args: {
     buttonChildren: "I'm button",
-    buttonType: "default"
+    buttonType: "default",
   },
-  argTypes: defaultArgumentTypes
+  argTypes: defaultArgumentTypes,
 };
 
 export const Primary: Story = {
   args: {
     buttonChildren: "I'm button",
-    buttonType: "primary"
+    buttonType: "primary",
   },
-  argTypes: defaultArgumentTypes
+  argTypes: defaultArgumentTypes,
 };
 
 export const Danger: Story = {
   args: {
     buttonChildren: "I'm button",
-    buttonType: "danger"
+    buttonType: "danger",
   },
-  argTypes: defaultArgumentTypes
+  argTypes: defaultArgumentTypes,
 };
 
 export const Secondary: Story = {
   args: {
     buttonChildren: "I'm button",
-    buttonType: "secondary"
+    buttonType: "secondary",
   },
-  argTypes: defaultArgumentTypes
+  argTypes: defaultArgumentTypes,
 };
 
 export const Tetriary: Story = {
   args: {
     buttonChildren: "I'm button",
-    buttonType: "tetriary"
+    buttonType: "tetriary",
   },
-  argTypes: defaultArgumentTypes
+  argTypes: defaultArgumentTypes,
 };
 
 export default meta;

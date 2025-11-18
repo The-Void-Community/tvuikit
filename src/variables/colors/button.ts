@@ -6,4 +6,4 @@ export const button = {
   danger: "#FF0000",
   secondary: "#000000",
   tetriary: "#000000",
-}
+};

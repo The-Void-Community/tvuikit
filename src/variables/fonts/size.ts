@@ -5,5 +5,5 @@ export const fontSize = {
   h4: "20px",
   h5: "18px",
   base: "16px",
-  mini: "14px"
-}
+  mini: "14px",
+};

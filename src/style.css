@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "./safelist.css";
 @import "./reset.css";
 @import "tailwindcss";
 
 :root {
-  --bg-default: #0A0A0A;
+  --bg-default: #0a0a0a;
   --bg-component: #00000065;
   --bg-smooth: #111111;
-  
+
   --image-bg: url("./assets/background.png");
-  
-  --fg-default: #EDEDED;
-  --fg-text: #EDEDED;
-  --fg-mini-text: #EDEDED80;
+
+  --fg-default: #ededed;
+  --fg-text: #ededed;
+  --fg-mini-text: #ededed80;
   --fg-card: #27272790;
   --fg-component: #272727;
-  
+
   --btn-default: var(--fg-default);
-  --btn-primary: color-mix(in oklab, var(--fg-default) 80%, #2AFF6A 30%);
-  --btn-danger: color-mix(in oklab, var(--fg-default) 60%, #FF0000 50%);
+  --btn-primary: color-mix(in oklab, var(--fg-default) 80%, #2aff6a 30%);
+  --btn-danger: color-mix(in oklab, var(--fg-default) 60%, #ff0000 50%);
   --btn-secondary: color-mix(in oklab, var(--fg-default) 80%, #000000 30%);
   --btn-tetriary: color-mix(in oklab, var(--fg-default) 70%, #000000 40%);
-  
+
   --fs-h1: 36px;
   --fs-h2: 32px;
   --fs-h3: 24px;

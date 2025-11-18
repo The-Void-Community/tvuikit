@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Page } from ".";
+import { Page } from "./story";
 
 const meta: Meta<typeof Page> = {
   component: Page,
@@ -9,8 +9,6 @@ const meta: Meta<typeof Page> = {
 
 type Story = StoryObj<typeof Page>;
 
-export const Default: Story = {
-  
-}
+export const Default: Story = {};
 
 export default meta;

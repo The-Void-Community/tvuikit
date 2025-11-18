@@ -1,15 +1,12 @@
-import type { ReactNode } from "react"
-import { button } from "../../variables/colors/button"
+import type { ReactNode } from "react";
+import { button } from "../../variables/colors/button";
 
 type Props = {
-  children: ReactNode,
-  type: keyof typeof button
-}
+  children: ReactNode;
+  type: keyof typeof button;
+};
 
-export const Button = ({
-  children,
-  type
-}: Props) => {
+export const Button = ({ children, type }: Props) => {
   return (
     <button
       className={[
@@ -19,5 +16,5 @@ export const Button = ({
     >
       {children}
     </button>
-  )
-}
+  );
+};
