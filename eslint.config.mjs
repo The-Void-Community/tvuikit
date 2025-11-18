@@ -1,29 +1,33 @@
-import js from "@eslint/js";
 import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import pluginJs from "@eslint/js";
+import tseslint, { parser } from "typescript-eslint";
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
-export default tseslint.config(
-  { ignores: ["dist"] },
+/** @type {import('eslint').Linter.Config[]} */
+export default [
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
+    ignores: ["**/*.js", "**/*.d.ts", "**/dist/**", "**/node_modules/**"]
+  },
+
+  {
     languageOptions: {
-      ecmaVersion: 2024,
-      globals: globals.browser,
-      parserOptions: {
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
+      globals: globals.es2024,
+      parser: parser
+    }
+  },
+
+  {
     plugins: {
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh
     },
+
     rules: {
       ...reactHooks.configs.recommended.rules,
     },
   },
-  eslintPluginPrettierRecommended,
-);
+
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+];
