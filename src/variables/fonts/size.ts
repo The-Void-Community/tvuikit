@@ -1,4 +1,4 @@
-export const fontSize = {
+export const FONT_SIZE = {
   h1: "36px",
   h2: "32px",
   h3: "24px",

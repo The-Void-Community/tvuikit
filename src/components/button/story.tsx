@@ -2,11 +2,11 @@ import type { ReactNode } from "react";
 
 import { Wrapper } from "../wrapper/wrapper";
 import { Button } from "./button";
-import { button } from "../../variables/colors/button";
+import { BUTTON_VARIANTS } from "../../variables/colors/button";
 
 export type PageProps = {
   buttonChildren: ReactNode;
-  buttonType: keyof typeof button;
+  buttonType: keyof typeof BUTTON_VARIANTS;
 };
 
 export const Page = ({
@@ -15,7 +15,7 @@ export const Page = ({
 }: PageProps) => {
   return (
     <Wrapper>
-      <Button {...{ children, type }} />
+      <Button {...{ children, variant: type }} />
     </Wrapper>
   );
 };

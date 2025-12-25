@@ -1,4 +1,4 @@
-export const foreground = {
+export const FOREGROUND = {
   default: "#EDEDED",
   text: "#EDEDED",
   miniText: "#EDEDED40",
