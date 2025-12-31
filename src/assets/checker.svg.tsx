@@ -1,10 +1,10 @@
 import type { Ref } from "react";
 
 export type CheckmarkProps = {
-  size: number|string;
-  ref: Ref<SVGSVGElement|null>;
-  className: string
-}
+  size: number | string;
+  ref: Ref<SVGSVGElement | null>;
+  className: string;
+};
 
 export const Checkmark = ({ size, ref, className }: CheckmarkProps) => {
   return (
@@ -18,8 +18,14 @@ export const Checkmark = ({ size, ref, className }: CheckmarkProps) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g transform="translate(4 6)">
-        <path d="M1 6L6 11L16 1" stroke="#EDEDED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path
+          d="M1 6L6 11L16 1"
+          stroke="#EDEDED"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </g>
     </svg>
-  )
-}
+  );
+};

@@ -3,8 +3,8 @@ import { Wrapper } from "../wrapper";
 import { Checkbox } from "./checkbox";
 
 type PageProps = {
-  size: number
-}
+  size: number;
+};
 
 export const Page = ({ size }: PageProps) => {
   return (

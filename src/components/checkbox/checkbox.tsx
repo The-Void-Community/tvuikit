@@ -1,11 +1,14 @@
-"use client"
+"use client";
 
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import { useEffect, useRef, useState } from "react";
 
 import { Checkmark } from "../../assets/checker.svg";
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 export type CheckboxProps = {
   inputName?: string;
   inputId?: string;
@@ -26,10 +29,10 @@ export const Checkbox = ({
   ...props
 }: CheckboxProps) => {
   const [actived, setActived] = useState<boolean>(true);
-  
+
   const ref = useRef<SVGSVGElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  
+
   const styleSize = `${size + OFFSET}px`;
 
   useEffect(() => {
@@ -46,12 +49,12 @@ export const Checkbox = ({
     } else {
       ref.current.style.opacity = "0";
     }
-    
+
     setTimeout(() => {
       if (!ref.current) {
         return;
       }
-      
+
       if (actived) {
         ref.current.style.opacity = "1";
       } else {
@@ -64,12 +67,12 @@ export const Checkbox = ({
     <div
       className={[
         "bg-(--bg-default) border-(--fg-mini-text) border-1 rounded-md p-[4px] cursor-pointer",
-        className
+        className,
       ].join(" ")}
       style={{
         height: styleSize,
         width: styleSize,
-        ...style
+        ...style,
       }}
       onClick={(event) => {
         onClick?.(event);
@@ -87,7 +90,7 @@ export const Checkbox = ({
         style={{ display: "none" }}
       />
     </div>
-  )
+  );
 };
 
 export default Checkbox;

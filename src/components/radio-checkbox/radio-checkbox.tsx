@@ -24,11 +24,13 @@ export const Radiocheckbox = ({
   const [actived, setActived] = useState<boolean>(false);
 
   if (radioSize < MINIMAL_RADIO_SIZE && !dangerousDisableError) {
-    console.error("radio size less than minimal, set radioSize = 12 or more too resolve");
+    console.error(
+      "radio size less than minimal, set radioSize = 12 or more too resolve",
+    );
   }
 
-  const containerWidth = radioSize * 4
-  const LEFT_OFFSET = containerWidth - PADDING_OFFSET*2 - radioSize;
+  const containerWidth = radioSize * 4;
+  const LEFT_OFFSET = containerWidth - PADDING_OFFSET * 2 - radioSize;
 
   const roundBackground = actived ? "bg-(--fg-default)" : "bg-(--fg-mini-text)";
   const styleLeft = actived ? LEFT_OFFSET : 0;
@@ -37,11 +39,11 @@ export const Radiocheckbox = ({
     <div
       style={{
         width: `${containerWidth}px`,
-        ...style
+        ...style,
       }}
       className={[
         "bg-(--bg-card) rounded-[200px] py-[6px] px-[8px] cursor-pointer",
-        className
+        className,
       ].join(" ")}
       onClick={(event) => {
         setActived(!actived);
@@ -52,12 +54,12 @@ export const Radiocheckbox = ({
       <div
         className={[
           "relative duration-300 rounded-[100%]",
-          roundBackground
+          roundBackground,
         ].join(" ")}
         style={{
           height: `${radioSize}px`,
           width: `${radioSize}px`,
-          left: `${styleLeft}px`
+          left: `${styleLeft}px`,
         }}
       />
 
@@ -68,7 +70,7 @@ export const Radiocheckbox = ({
         style={{ display: "none" }}
       />
     </div>
-  )
+  );
 };
 
 export default Radiocheckbox;

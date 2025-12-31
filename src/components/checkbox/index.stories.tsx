@@ -11,16 +11,16 @@ type Story = StoryObj<typeof Page>;
 
 export const Default: Story = {
   args: {
-    size: 24
+    size: 24,
   },
   argTypes: {
     size: {
       type: "number",
       control: {
-        type: "number"
-      }
-    }
-  }
+        type: "number",
+      },
+    },
+  },
 };
 
 export default meta;
