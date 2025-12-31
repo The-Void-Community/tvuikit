@@ -10,8 +10,8 @@ export const Page = () => {
     <Wrapper>
       <Text />
       <Button />
-      <Checkbox />
       <Radiocheckbox />
+      <Checkbox />
     </Wrapper>
   );
 };
