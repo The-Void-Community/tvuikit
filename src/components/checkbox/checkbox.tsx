@@ -62,7 +62,7 @@ export const Checkbox = ({
       } else {
         ref.current.style.display = "none";
       }
-    }, 50);
+    }, 100);
   }, [actived, style?.display]);
 
   return (
