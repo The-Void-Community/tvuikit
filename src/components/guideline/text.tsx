@@ -1,6 +1,6 @@
 import { FontSize } from "../../variables/fonts";
 
-export const TextGuideline = () => {
+export const Text = () => {
   return (
     <div className="flex flex-col gap-2 rounded-lg">
       <div>
@@ -41,4 +41,4 @@ export const TextGuideline = () => {
   );
 };
 
-export default TextGuideline;
+export default Text;

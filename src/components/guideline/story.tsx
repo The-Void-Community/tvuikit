@@ -1,13 +1,13 @@
 import { Wrapper } from "../wrapper";
 
-import { ButtonGuildline } from "./button";
-import { TextGuideline } from "./text";
+import { Button } from "./button";
+import { Text } from "./text";
 
 export const Page = () => {
   return (
     <Wrapper>
-      <TextGuideline />
-      <ButtonGuildline />
+      <Text />
+      <Button />
     </Wrapper>
   );
 };

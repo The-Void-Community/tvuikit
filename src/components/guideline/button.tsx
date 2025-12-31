@@ -1,16 +1,16 @@
 import { BUTTONS } from "../../variables/colors";
-import { Button } from "../button";
+import { Button as ButtonComponent } from "../button";
 
-export const ButtonGuildline = () => {
+export const Button = () => {
   return (
     <div className="flex flex-col justify-center gap-4">
       {Object.keys(BUTTONS).map((key) => (
-        <Button key={key} variant={key as keyof typeof BUTTONS}>
+        <ButtonComponent key={key} variant={key as keyof typeof BUTTONS}>
           Button {key}
-        </Button>
+        </ButtonComponent>
       ))}
     </div>
   );
 };
 
-export default ButtonGuildline;
+export default Button;
