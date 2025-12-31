@@ -4,8 +4,9 @@ import { useState } from "react";
 export type RadiocheckboxProps = {
   inputName?: string;
   inputId?: string;
-  radioSize: number;
+  radioSize?: number;
   dangerousDisableError?: boolean;
+  checked?: boolean;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 const MINIMAL_RADIO_SIZE = 12;
@@ -14,14 +15,15 @@ const PADDING_OFFSET = 8;
 export const Radiocheckbox = ({
   inputId,
   inputName,
-  radioSize = 24,
   dangerousDisableError = false,
   style,
   className,
   onClick,
+  radioSize = 24,
+  checked = false,
   ...props
 }: RadiocheckboxProps) => {
-  const [actived, setActived] = useState<boolean>(false);
+  const [actived, setActived] = useState<boolean>(checked);
 
   if (radioSize < MINIMAL_RADIO_SIZE && !dangerousDisableError) {
     console.error(

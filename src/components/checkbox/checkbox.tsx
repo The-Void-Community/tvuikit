@@ -12,7 +12,8 @@ type DivProps = DetailedHTMLProps<
 export type CheckboxProps = {
   inputName?: string;
   inputId?: string;
-  size: number;
+  size?: number;
+  checked?: boolean;
 } & DivProps;
 
 const PADDING_OFFSET = 4;
@@ -26,9 +27,10 @@ export const Checkbox = ({
   style,
   onClick,
   size = 24,
+  checked = false,
   ...props
 }: CheckboxProps) => {
-  const [actived, setActived] = useState<boolean>(true);
+  const [actived, setActived] = useState<boolean>(checked);
 
   const ref = useRef<SVGSVGElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -66,7 +68,7 @@ export const Checkbox = ({
   return (
     <div
       className={[
-        "bg-(--bg-default) border-(--fg-mini-text) border-1 rounded-md p-[4px] cursor-pointer",
+        "bg-(--bg-card) border-(--fg-mini-text) border-1 rounded-[100%] p-[4px] cursor-pointer",
         className,
       ].join(" ")}
       style={{
