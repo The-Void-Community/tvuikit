@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { BUTTONS } from "@/variables/colors";
 import { Page } from "./story";
-import { BUTTON_VARIANTS } from "../../variables/colors/button";
 
 const meta: Meta<typeof Page> = {
   component: Page,
@@ -17,7 +17,7 @@ const defaultArgumentTypes: Story["argTypes"] = {
 
   buttonType: {
     type: "string",
-    options: Object.keys(BUTTON_VARIANTS),
+    options: Object.keys(BUTTONS),
 
     control: {
       type: "select",

@@ -1,1 +1,2 @@
-export * from "./variables";
+export * as VARIABLES from "./variables";
+export * from "./components";

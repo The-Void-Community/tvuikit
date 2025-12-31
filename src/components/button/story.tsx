@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 
-import { Wrapper } from "../wrapper/wrapper";
+import { Wrapper } from "@/components/wrapper";
+import { BUTTONS } from "@/variables/colors";
+
 import { Button } from "./button";
-import { BUTTON_VARIANTS } from "../../variables/colors/button";
 
 export type PageProps = {
   buttonChildren: ReactNode;
-  buttonType: keyof typeof BUTTON_VARIANTS;
+  buttonType: keyof typeof BUTTONS;
 };
 
 export const Page = ({

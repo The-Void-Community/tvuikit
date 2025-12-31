@@ -1,2 +1,2 @@
-export * from "./colors";
-export * from "./fonts";
+export * as COLORS from "./colors";
+export * as FONTS from "./fonts";
