@@ -9,11 +9,8 @@ export type AcitveProps = {
 
 export const Active = ({ actived, children, name }: AcitveProps) => {
   return (
-    <Activity
-      name={name}
-      mode={ actived ? "visible" : "hidden"}
-    >
+    <Activity name={name} mode={actived ? "visible" : "hidden"}>
       {children}
     </Activity>
-  )
-}
+  );
+};

@@ -18,18 +18,24 @@ export const Modal = ({
 }: ModalProps) => {
   const zIndexTailwind = zIndex ? "" : "z-100";
 
-  return createPortal((
-    <div className={[
-      "fixed top-0 h-screen w-screen",
-      zIndexTailwind,
-      className,
-    ].join(" ")} {...props} style={{
-      zIndex: zIndex,
-      ...style
-    }}>
+  return createPortal(
+    <div
+      className={[
+        "fixed top-0 h-screen w-screen",
+        zIndexTailwind,
+        className,
+      ].join(" ")}
+      {...props}
+      style={{
+        zIndex: zIndex,
+        ...style,
+      }}
+    >
       {children}
-    </div>
-  ), container, portalKey);
+    </div>,
+    container,
+    portalKey,
+  );
 };
 
 export default Modal;
