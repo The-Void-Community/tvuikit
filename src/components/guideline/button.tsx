@@ -1,5 +1,5 @@
-import { BUTTONS } from "@/variables/colors";
-import { Button } from "@/components/button";
+import { BUTTONS } from "../../variables/colors";
+import { Button } from "../button";
 
 export const ButtonGuildline = () => {
   return (

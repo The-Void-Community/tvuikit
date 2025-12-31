@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { BUTTONS } from "@/variables/colors";
+import { BUTTONS } from "../../variables/colors";
 import { Page } from "./story";
 
 const meta: Meta<typeof Page> = {

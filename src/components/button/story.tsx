@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import { Wrapper } from "@/components/wrapper";
-import { BUTTONS } from "@/variables/colors";
+import { Wrapper } from "../wrapper";
+import { BUTTONS } from "../../variables/colors";
 
 import { Button } from "./button";
 

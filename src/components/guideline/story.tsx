@@ -1,4 +1,4 @@
-import { Wrapper } from "../wrapper/wrapper";
+import { Wrapper } from "../wrapper";
 
 import { ButtonGuildline } from "./button";
 import { TextGuideline } from "./text";

@@ -1,4 +1,4 @@
-import { Wrapper } from "@/components/wrapper";
+import { Wrapper } from "../wrapper";
 
 import { Input } from "./input";
 import { Textarea } from "./textarea";

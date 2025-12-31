@@ -1,4 +1,4 @@
-import { FontSize } from "@/variables/fonts";
+import { FontSize } from "../../variables/fonts";
 
 export const TextGuideline = () => {
   return (

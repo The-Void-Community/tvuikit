@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { BUTTONS } from "@/variables/colors";
+import type { BUTTONS } from "../../variables/colors";
 
 export type ButtonProps = {
   children: ReactNode;
