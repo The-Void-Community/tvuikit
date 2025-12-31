@@ -20,7 +20,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
-      "@/variables/*": ["./src/variables/*"],
+      "@/variables/*": ["./src/variables/*"]
     }
   },
   "include": ["src"],

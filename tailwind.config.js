@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   theme: {
-    backgroundColor: theme => ({
+    backgroundColor: (theme) => ({
       ...theme,
       default: "#0a0a0a",
       component: "#00000065",
       smooth: "#111111",
-      card: "#27272790"
+      card: "#27272790",
     }),
     extend: {
       color: {
@@ -17,5 +17,5 @@ export default {
         "btn-tetriary": "var(--btn-tetriary)",
       },
     },
-  }
+  },
 };

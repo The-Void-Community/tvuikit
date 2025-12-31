@@ -1,16 +1,15 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export type WrapperProps = {
-  flexDirection?: "col" | "row"
-} & DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->;
+  flexDirection?: "col" | "row";
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-export const Wrapper = ({ flexDirection = "row", className, ...props }: WrapperProps) => {
-  const direction = flexDirection === "col"
-    ? "flex-col"
-    : "flex-row";
+export const Wrapper = ({
+  flexDirection = "row",
+  className,
+  ...props
+}: WrapperProps) => {
+  const direction = flexDirection === "col" ? "flex-col" : "flex-row";
 
   return (
     <div

@@ -13,8 +13,8 @@ export const Default: Story = {
   args: {
     imageVar: "--image-bg",
     height: "100px",
-    width: "300px"
-  }
+    width: "300px",
+  },
 };
 
 export default meta;
