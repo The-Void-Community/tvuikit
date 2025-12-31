@@ -10,7 +10,7 @@ export const Button = ({ children, variant }: Props) => {
   return (
     <button
       className={[
-        "bg-(--fg-card) px-1 py-2 rounded-lg page",
+        "bg-(--fg-card) px-4 py-2 rounded-lg page",
         `color-${variant}`,
       ].join(" ")}
     >
