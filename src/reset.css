@@ -28,7 +28,3 @@ h4 {
 h5 {
   font-size: var(--fs-h5);
 }
-
-button {
-  cursor: pointer;
-}

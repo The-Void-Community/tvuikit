@@ -7,6 +7,7 @@
   --bg-default: #0a0a0a;
   --bg-component: #00000065;
   --bg-smooth: #111111;
+  --bg-section: #1a1a1a90;
   --bg-card: #27272790;
 
   --image-bg: url("./assets/background.png");
@@ -14,7 +15,7 @@
   --fg-default: #ededed;
   --fg-text: #ededed;
   --fg-mini-text: #ededed80;
-  --fg-card: #27272790;
+  --fg-card: #4d4d4d90;
   --fg-component: #272727;
 
   --btn-default: var(--fg-default);

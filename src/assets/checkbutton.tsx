@@ -71,8 +71,9 @@ export const Checkbutton = ({
   return (
     <div
       className={[
-        "bg-(--bg-card) border-(--fg-mini-text) border-1 p-[8px] cursor-pointer",
+        "bg-(--bg-card) border-(--fg-mini-text) border-1 p-[8px] cursor-pointer duration-300",
         type === "checkbox" ? "rounded-[20%]" : "rounded-[100%]",
+        "hover:bg-(--fg-card)",
         className,
       ].join(" ")}
       style={{
