@@ -5,6 +5,6 @@ export * from "./wrapper";
 export * from "./modal";
 export * from "./active";
 export * from "./checkbox";
-export * from "./radio-checkbox";
+export * from "./switch";
 
 export * as Guildline from "./guideline";

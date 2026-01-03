@@ -3,14 +3,14 @@ import { Wrapper } from "../wrapper";
 import { Button } from "./button";
 import { Text } from "./text";
 import { Checkbox } from "./checkbox";
-import { Radiocheckbox } from "./radio-checkbox";
+import { Switch } from "./switch";
 
 export const Page = () => {
   return (
     <Wrapper>
       <Text />
       <Button />
-      <Radiocheckbox />
+      <Switch />
       <Checkbox />
     </Wrapper>
   );

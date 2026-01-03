@@ -12,7 +12,7 @@ export type RadiocheckboxProps = {
 const MINIMAL_RADIO_SIZE = 12;
 const PADDING_OFFSET = 8;
 
-export const Radiocheckbox = ({
+export const Switch = ({
   inputId,
   inputName,
   dangerousDisableError = false,
@@ -75,4 +75,4 @@ export const Radiocheckbox = ({
   );
 };
 
-export default Radiocheckbox;
+export default Switch;

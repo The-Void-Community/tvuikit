@@ -1,6 +1,6 @@
 import { Wrapper } from "../wrapper";
 
-import { Radiocheckbox } from "./radio-checkbox";
+import { Switch } from "./switch";
 
 type PageProps = {
   size: number;
@@ -9,7 +9,7 @@ type PageProps = {
 export const Page = ({ size }: PageProps) => {
   return (
     <Wrapper flexDirection="col">
-      <Radiocheckbox radioSize={size} />
+      <Switch radioSize={size} />
     </Wrapper>
   );
 };
