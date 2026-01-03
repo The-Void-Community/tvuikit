@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { Text } from "./text";
 import { Checkbox } from "./checkbox";
 import { Switch } from "./switch";
+import { Radio } from "./radio";
 
 export const Page = () => {
   return (
@@ -12,6 +13,7 @@ export const Page = () => {
       <Button />
       <Switch />
       <Checkbox />
+      <Radio />
     </Wrapper>
   );
 };
