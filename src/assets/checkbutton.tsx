@@ -87,11 +87,11 @@ export const Checkbutton = ({
       }}
       {...props}
     >
-      {
-        type === "checkbox"
-          ? <Checkmark className="duration-300" ref={ref} size={size} />
-          : <Round className="duration-300" ref={ref} size={size} />
-      }
+      {type === "checkbox" ? (
+        <Checkmark className="duration-300" ref={ref} size={size} />
+      ) : (
+        <Round className="duration-300" ref={ref} size={size} />
+      )}
 
       <input
         ref={inputRef}

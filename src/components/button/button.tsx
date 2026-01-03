@@ -4,7 +4,10 @@ import type { BUTTONS } from "../../variables/colors";
 export type ButtonProps = {
   children: ReactNode;
   variant?: keyof typeof BUTTONS;
-} & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+} & DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
 export const Button = ({
   variant = "default",
@@ -17,13 +20,11 @@ export const Button = ({
       ? "bg-(--bg-smooth) text-(--fg-mini-text)"
       : `bg-(--bg-card) color-${variant} cursor-pointer`,
 
-    "hover:disabled": props.disabled
-      ? ""
-      : "hover:px-5 hover:py-3",
+    "hover:disabled": props.disabled ? "" : "hover:px-5 hover:py-3",
 
     "active:disabled": props.disabled
       ? ""
-      : "active:px-3 active:py-1 active:bg-(--fg-component) active:opacity-[0.7]"
+      : "active:px-3 active:py-1 active:bg-(--fg-component) active:opacity-[0.7]",
   };
 
   return (
@@ -33,7 +34,7 @@ export const Button = ({
         booleanClassNames.diabled,
         booleanClassNames["hover:disabled"],
         booleanClassNames["active:disabled"],
-        className
+        className,
       ].join(" ")}
       {...props}
     >

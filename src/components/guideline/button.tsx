@@ -9,9 +9,7 @@ export const Button = () => {
           Button {key}
         </ButtonComponent>
       ))}
-      <ButtonComponent disabled>
-        Button Disabled
-      </ButtonComponent>
+      <ButtonComponent disabled>Button Disabled</ButtonComponent>
     </div>
   );
 };

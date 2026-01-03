@@ -34,7 +34,7 @@ export const Switch = ({
   const containerWidth = radioSize * 4;
   const LEFT_OFFSET = containerWidth - PADDING_OFFSET * 2 - radioSize;
 
-  const background = actived ? "bg-(--bg-card)" : "bg-(--bg-section)"; 
+  const background = actived ? "bg-(--bg-card)" : "bg-(--bg-section)";
   const roundBackground = actived ? "bg-(--fg-default)" : "bg-(--fg-mini-text)";
   const styleLeft = actived ? LEFT_OFFSET : 0;
 

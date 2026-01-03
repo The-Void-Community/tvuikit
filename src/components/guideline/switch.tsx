@@ -1,4 +1,4 @@
-import { Switch as SwitchComponent } from "../switch"
+import { Switch as SwitchComponent } from "../switch";
 
 export const Switch = () => {
   return (
@@ -6,5 +6,5 @@ export const Switch = () => {
       <SwitchComponent checked />
       <SwitchComponent />
     </div>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import { Checkbox as CheckboxComponent } from "../checkbox"
+import { Checkbox as CheckboxComponent } from "../checkbox";
 
 export const Checkbox = () => {
   return (
@@ -6,5 +6,5 @@ export const Checkbox = () => {
       <CheckboxComponent checked />
       <CheckboxComponent />
     </div>
-  )
-}
+  );
+};

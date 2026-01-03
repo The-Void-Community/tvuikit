@@ -1,4 +1,4 @@
-import { Radio as RadioComponent } from "../radio"
+import { Radio as RadioComponent } from "../radio";
 
 export const Radio = () => {
   return (
@@ -6,5 +6,5 @@ export const Radio = () => {
       <RadioComponent checked />
       <RadioComponent />
     </div>
-  )
-}
+  );
+};
