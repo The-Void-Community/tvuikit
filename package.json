@@ -1,6 +1,6 @@
 {
   "name": "tvuikit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "type": "module",
   "files": [
     "dist"
@@ -10,6 +10,7 @@
   "module": "./dist/tvuikit.es.js",
   "exports": {
     "./package.json": "./package.json",
+    "./index.css": "./dist/index.css",
     ".": {
       "types": "./dist/tvuikit.es.d.ts",
       "import": "./dist/tvuikit.es.js"
