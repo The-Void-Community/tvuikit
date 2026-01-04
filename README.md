@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# tvuikit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- UI кит от The Void!
 
-Currently, two official plugins are available:
+## Разработчик
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [The Void Community](https://github.com/The-Void-Community)
+  - ([FOCKUSTY](https://github.com/FOCKUSTY))
 
-## Expanding the ESLint configuration
+## Репозиторий
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [tvuikit](https://github.com/The-Void-Community/tvuikit)
 
-- Configure the top-level `parserOptions` property like this:
+### У нас есть
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+- `Active` — Аналог `Activity` из React, но более удобный
+- `Background` — idk зачем, но пусть будет :)
+- `Button` — Очень крутая кнопка!
+- `Checkbox`, `Radio` и `Switch`
+- `Input` и `Textarea`
+- `Wrapper` — Это для storybook больше, но вдруг пригодится
+- `Modal` — Удобное модальное окно, наверное, надо тестить
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Используем
+
+- [Tailwind CSS](https://tailwindcss.com)
+- [Vite](https://vite.dev)
+- [React](https://react.dev)
+- [Storybook](https://storybook.js.org)
+- [Eslint](https://eslint.org)
+- [Prettier](https://prettier.io)
+
+#### Вдохновение
+
+- [HeroUI](https://www.heroui.com)
+- [MaterialUI](https://mui.com)
