@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "sigeev-ui-kit",
-      fileName: (format) => `sigeev-ui-kit.${format}.js`,
+      name: "tvuikit",
+      fileName: (format) => `tvuikit.${format}.js`,
     },
     rollupOptions: {
       external: ["react"],
