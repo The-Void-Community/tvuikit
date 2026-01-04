@@ -1,6 +1,6 @@
 {
   "name": "tvuikit",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "type": "module",
   "files": [
     "dist"
@@ -28,11 +28,17 @@
   "bugs": {
     "url": "https://github.com/The-Void-Community/tvuikit/issues"
   },
-  "keywords": ["react", "ui-kit", "components", "design-system"],
+  "keywords": [
+    "react",
+    "ui-kit",
+    "components",
+    "design-system"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -40,8 +46,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "clsx": "^2.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

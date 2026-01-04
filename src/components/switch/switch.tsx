@@ -1,6 +1,8 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 import { useState } from "react";
 
+import { cn } from "../../utils/cn";
+
 export type RadiocheckboxProps = {
   inputName?: string;
   inputId?: string;
@@ -44,12 +46,12 @@ export const Switch = ({
         width: `${containerWidth}px`,
         ...style,
       }}
-      className={[
+      className={cn(
         "rounded-[200px] py-[6px] px-[8px] cursor-pointer duration-300",
         background,
         "hover:bg-(--fg-card)",
         className,
-      ].join(" ")}
+      )}
       onClick={(event) => {
         setActived(!actived);
         onClick?.(event);

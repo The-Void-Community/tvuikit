@@ -1,6 +1,8 @@
 import type { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 import type { BUTTONS } from "../../variables/colors";
 
+import { cn } from "../../utils/cn";
+
 export type ButtonProps = {
   children: ReactNode;
   variant?: keyof typeof BUTTONS;
@@ -29,13 +31,13 @@ export const Button = ({
 
   return (
     <button
-      className={[
+      className={cn(
         "px-4 py-2 w-fit rounded-lg page duration-200",
         booleanClassNames.diabled,
         booleanClassNames["hover:disabled"],
         booleanClassNames["active:disabled"],
         className,
-      ].join(" ")}
+      )}
       {...props}
     >
       {children}

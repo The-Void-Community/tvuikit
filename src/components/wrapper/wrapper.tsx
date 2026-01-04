@@ -1,5 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
+import { cn } from "../../utils/cn";
+
 export type WrapperProps = {
   flexDirection?: "col" | "row";
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
@@ -14,11 +16,11 @@ export const Wrapper = ({
   return (
     <div
       {...props}
-      className={[
-        className || "",
-        direction,
+      className={cn(
         "bg-(image:--image-bg) flex gap-8 px-12 py-4 rounded-lg page",
-      ].join(" ")}
+        direction,
+        className,
+      )}
     />
   );
 };

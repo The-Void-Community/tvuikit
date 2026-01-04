@@ -1,6 +1,8 @@
 import type { DetailedHTMLProps, HTMLAttributes, Key } from "react";
 import { createPortal } from "react-dom";
 
+import { cn } from "../../utils/cn";
+
 export type ModalProps = {
   container: Element | DocumentFragment;
   portalKey?: Key | null;
@@ -20,11 +22,11 @@ export const Modal = ({
 
   return createPortal(
     <div
-      className={[
+      className={cn(
         "fixed top-0 h-screen w-screen",
         zIndexTailwind,
         className,
-      ].join(" ")}
+      )}
       {...props}
       style={{
         zIndex: zIndex,

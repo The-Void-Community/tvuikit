@@ -1,4 +1,5 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
+import { cn } from "../../utils/cn";
 
 export type BackgroundProps = {
   imageVar: string;
@@ -15,7 +16,7 @@ export const Background = ({
   return (
     <div
       {...props}
-      className={[className, variable].join(" ")}
+      className={cn(className, variable)}
       style={{
         ...style,
         backgroundSize: "cover",
