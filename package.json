@@ -1,19 +1,23 @@
 {
-  "name": "sigeev-ui-kit",
-  "private": false,
-  "version": "1.0.1",
+  "name": "tvuikit",
+  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/sigeev-ui-kit.umd.js",
-  "module": "./dist/sigeev-ui-kit.es.js",
+  "main": "./dist/tvuikit.umd.js",
+  "module": "./dist/tvuikit.es.js",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/sigeev-ui-kit.es.d.ts",
-      "import": "./dist/sigeev-ui-kit.es.js"
+      "types": "./dist/tvuikit.es.d.ts",
+      "import": "./dist/tvuikit.es.js"
     }
+  },
+  "author": {
+    "name": "FOCKUSTY",
+    "email": "viserd.yt@gmail.com",
+    "url": "https://fockusty.netlify.app"
   },
   "scripts": {
     "dev": "vite",
