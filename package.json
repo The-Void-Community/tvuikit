@@ -5,6 +5,7 @@
   "files": [
     "dist"
   ],
+  "description": "A modern React UI kit for The Void Community projects",
   "main": "./dist/tvuikit.umd.js",
   "module": "./dist/tvuikit.es.js",
   "exports": {
@@ -19,6 +20,16 @@
     "email": "viserd.yt@gmail.com",
     "url": "https://fockusty.netlify.app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Void-Community/tvuikit.git"
+  },
+  "homepage": "https://github.com/The-Void-Community/tvuikit#readme",
+  "bugs": {
+    "url": "https://github.com/The-Void-Community/tvuikit/issues"
+  },
+  "keywords": ["react", "ui-kit", "components", "design-system"],
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
