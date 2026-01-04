@@ -32,7 +32,6 @@ jobs:
             npm-${{ runner.os }}-node-
 
       - run: npm i
-      - run: npm сi
       - run: npm run build
 
       - name: Dry-run publish (optional)
