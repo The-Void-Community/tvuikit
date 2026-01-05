@@ -1,7 +1,7 @@
 import type { RefObject } from "react";
 import { createContext, useContext } from "react";
 
-interface DropdownContextType {
+type DropdownContextType = {
   opened: boolean;
   toggle: (state?: boolean) => void;
   dropdownRef: RefObject<HTMLDivElement | null>;
@@ -14,5 +14,6 @@ export const useDropdown = () => {
   if (!context) {
     throw new Error("useDropdown must be used within DropdownProvider");
   }
+  
   return context;
 };

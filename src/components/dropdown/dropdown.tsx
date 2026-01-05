@@ -1,21 +1,25 @@
-import type { ReactNode } from "react";
+import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { DropdownContext } from "./dropdown.context";
 import { useClickOutside } from "./use-outside-click";
+import { cn } from "../../utils/cn";
 
-interface DropdownProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+export type DropdownProps = {
   children: ReactNode;
-  onOpenChange?: (isOpen: boolean) => void;
+  onChangeState?: (opened: boolean) => void;
   closeOnClickOutside?: boolean;
   className?: string;
-}
+} & Omit<DivProps, "ref">;
 
 export const Dropdown = ({
   children,
-  onOpenChange,
+  onChangeState,
   closeOnClickOutside = true,
   className,
+  ...props
 }: DropdownProps) => {
   const [opened, setOpened] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -25,32 +29,37 @@ export const Dropdown = ({
     (state?: boolean) => {
       if (state) {
         setOpened(state);
-        onOpenChange?.(state);
+        onChangeState?.(state);
         return;
       }
 
       setOpened((prev) => {
         const newValue = !prev;
-        onOpenChange?.(newValue);
+        onChangeState?.(newValue);
         return newValue;
       });
     },
-    [setOpened, onOpenChange],
+    [setOpened, onChangeState],
   );
 
   useClickOutside(dropdownRef, () => {
-    if (closeOnClickOutside && opened) {
-      toggle(false);
+    if (!closeOnClickOutside) {
+      return
     }
+    if (!opened) {
+      return;
+    }
+
+    toggle(false);
   });
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleEscape = (event: KeyboardEvent) => {
       if (!opened) {
         return;
       }
 
-      if (e.key === "Escape") {
+      if (event.key === "Escape") {
         toggle(false);
       }
     };
@@ -65,7 +74,14 @@ export const Dropdown = ({
     <DropdownContext.Provider
       value={{ opened, toggle, dropdownRef, triggerRef }}
     >
-      <div ref={dropdownRef} className={`relative inline-block ${className}`}>
+      <div
+        ref={dropdownRef}
+        className={cn(
+          "relative inline-block",
+          className
+        )}
+        {...props}
+      >
         {children}
       </div>
     </DropdownContext.Provider>
