@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from ".";
-import { UserCircle, Settings, LogOut, Bell } from "lucide-react";
 
 const meta: Meta<typeof Dropdown> = {
   title: "Components/Dropdown",
@@ -21,15 +20,12 @@ export const Default: Story = {
         <DropdownTrigger>Open Dropdown</DropdownTrigger>
         <DropdownMenu>
           <DropdownItem onClick={() => console.log("Profile clicked")}>
-            <UserCircle className="inline mr-2 w-4 h-4" />
             Profile
           </DropdownItem>
           <DropdownItem>
-            <Settings className="inline mr-2 w-4 h-4" />
             Settings
           </DropdownItem>
           <DropdownItem variant="danger">
-            <LogOut className="inline mr-2 w-4 h-4" />
             Logout
           </DropdownItem>
         </DropdownMenu>
@@ -43,7 +39,7 @@ export const WithCustomTrigger: Story = {
     <div className="p-8">
       <Dropdown>
         <DropdownTrigger>
-          <Bell className="w-5 h-5" />
+          B
         </DropdownTrigger>
         <DropdownMenu>
           <DropdownItem>Notification 1</DropdownItem>
