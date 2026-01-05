@@ -34,18 +34,15 @@ export const Button = ({
   const finalClassName = overwriteClassName
     ? className
     : cn(
-      "px-4 py-2 w-fit rounded-lg page duration-200",
-      booleanClassNames.diabled,
-      booleanClassNames["hover:disabled"],
-      booleanClassNames["active:disabled"],
-      className,
-    )
+        "px-4 py-2 w-fit rounded-lg page duration-200",
+        booleanClassNames.diabled,
+        booleanClassNames["hover:disabled"],
+        booleanClassNames["active:disabled"],
+        className,
+      );
 
   return (
-    <button
-      className={finalClassName}
-      {...props}
-    >
+    <button className={finalClassName} {...props}>
       {children}
     </button>
   );

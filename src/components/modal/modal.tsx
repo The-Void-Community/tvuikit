@@ -22,11 +22,7 @@ export const Modal = ({
 
   return createPortal(
     <div
-      className={cn(
-        "fixed top-0 h-screen w-screen",
-        zIndexTailwind,
-        className,
-      )}
+      className={cn("fixed top-0 h-screen w-screen", zIndexTailwind, className)}
       {...props}
       style={{
         zIndex: zIndex,

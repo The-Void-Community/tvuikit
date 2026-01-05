@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '.';
-import { UserCircle, Settings, LogOut, Bell } from 'lucide-react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from ".";
+import { UserCircle, Settings, LogOut, Bell } from "lucide-react";
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Components/Dropdown',
+  title: "Components/Dropdown",
   component: Dropdown,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    closeOnClickOutside: { control: 'boolean' },
+    closeOnClickOutside: { control: "boolean" },
   },
 };
 
@@ -18,11 +18,9 @@ export const Default: Story = {
   render: (args) => (
     <div className="p-8">
       <Dropdown {...args}>
-        <DropdownTrigger>
-          Open Dropdown
-        </DropdownTrigger>
+        <DropdownTrigger>Open Dropdown</DropdownTrigger>
         <DropdownMenu>
-          <DropdownItem onClick={() => console.log('Profile clicked')}>
+          <DropdownItem onClick={() => console.log("Profile clicked")}>
             <UserCircle className="inline mr-2 w-4 h-4" />
             Profile
           </DropdownItem>

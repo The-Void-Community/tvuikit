@@ -1,8 +1,8 @@
-import type { MouseEvent } from 'react';
+import type { MouseEvent } from "react";
 
-import { useDropdown } from './dropdown.context';
-import { Button, ButtonProps } from '../button';
-import { cn } from '../../utils/cn';
+import { useDropdown } from "./dropdown.context";
+import { Button, ButtonProps } from "../button";
+import { cn } from "../../utils/cn";
 
 export type DropdownItemProps = ButtonProps;
 export const DropdownItem = ({
@@ -14,11 +14,13 @@ export const DropdownItem = ({
 }: DropdownItemProps) => {
   const { toggle } = useDropdown();
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+  const handleClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
+  ) => {
     if (props.disabled) {
-      return
-    };
-    
+      return;
+    }
+
     onClick?.(event);
     toggle(false);
   };
@@ -32,7 +34,7 @@ export const DropdownItem = ({
           ? "text-(--fg-mini-text)"
           : `color-${variant} cursor-pointer`,
         "hover:bg-(--fg-mini-text-30)",
-        className
+        className,
       )}
       overwriteClassName
       role="menuitem"

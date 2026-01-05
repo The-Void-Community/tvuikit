@@ -1,5 +1,5 @@
-import { useDropdown } from './dropdown.context';
-import { Button, ButtonProps } from '../button';
+import { useDropdown } from "./dropdown.context";
+import { Button, ButtonProps } from "../button";
 
 export type DropdownTriggerProps = ButtonProps;
 

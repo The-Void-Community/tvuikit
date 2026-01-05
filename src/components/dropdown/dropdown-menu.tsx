@@ -1,11 +1,14 @@
-import type { DetailedHTMLProps, HTMLAttributes } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { createPortal } from 'react-dom';
+import { createPortal } from "react-dom";
 
-import { useDropdown } from './dropdown.context';
-import { cn } from '../../utils/cn';
+import { useDropdown } from "./dropdown.context";
+import { cn } from "../../utils/cn";
 
-export type DropdownMenuProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export type DropdownMenuProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export const DropdownMenu = ({
   children,
@@ -19,21 +22,21 @@ export const DropdownMenu = ({
   if (!triggerRef.current) {
     return null;
   }
-  
+
   // eslint-disable-next-line react-hooks/refs
   const position = triggerRef.current.getBoundingClientRect();
-  
+
   const content = (
     <div
       className={cn(
         "bg-(--bg-smooth-light) absolute z-100 rounded-lg",
         "flex flex-col min-w-40",
-        className
+        className,
       )}
       style={{
-        left: position.left + position.width/2 + window.scrollX,
+        left: position.left + position.width / 2 + window.scrollX,
         top: position.top + position.height + window.scrollY,
-        ...style
+        ...style,
       }}
       role="menu"
       aria-orientation="vertical"
