@@ -32,9 +32,9 @@ export const Linear: StoryObj<typeof LinearProgress> = {
   ),
   args: {
     height: 48,
-    value: 24
+    value: 24,
   },
-}
+};
 
 export const LinearWithPercentage: StoryObj<typeof LinearProgress> = {
   render: (args) => (
@@ -44,8 +44,8 @@ export const LinearWithPercentage: StoryObj<typeof LinearProgress> = {
   ),
   args: {
     height: 48,
-    value: 24
+    value: 24,
   },
-}
+};
 
 export default meta;

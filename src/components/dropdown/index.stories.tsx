@@ -21,12 +21,8 @@ export const Default: Story = {
           <DropdownItem onClick={() => console.log("Profile clicked")}>
             Profile
           </DropdownItem>
-          <DropdownItem>
-            Settings
-          </DropdownItem>
-          <DropdownItem variant="danger">
-            Logout
-          </DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem variant="danger">Logout</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>
@@ -37,9 +33,7 @@ export const WithCustomTrigger: Story = {
   render: () => (
     <div className="p-8">
       <Dropdown>
-        <DropdownTrigger>
-          B
-        </DropdownTrigger>
+        <DropdownTrigger>B</DropdownTrigger>
         <DropdownMenu>
           <DropdownItem>Notification 1</DropdownItem>
           <DropdownItem>Notification 2</DropdownItem>

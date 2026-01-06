@@ -5,7 +5,7 @@ export type LinearProgressProps = {
   height?: number;
   showPercentage?: boolean;
   className?: string;
-}
+};
 
 const borderRadius = 8;
 const MAX = 100;
@@ -19,12 +19,9 @@ export const LinearProgress = ({
   const clampedValue = Math.max(0, Math.min(value, MAX));
   const percentage = (clampedValue / MAX) * 100;
   const roundedPercentage = Math.round(percentage);
-  
+
   return (
-    <div className={cn(
-      "w-full",
-      className
-    )}>
+    <div className={cn("w-full", className)}>
       <div className="relative w-full" style={{ height }}>
         <svg
           width="100%"
@@ -34,11 +31,7 @@ export const LinearProgress = ({
           preserveAspectRatio="none"
           className="absolute top-0 left-0"
         >
-          <rect
-            width="100"
-            height={height}
-            fill={"var(--bg-smooth-ce)"}
-          />
+          <rect width="100" height={height} fill={"var(--bg-smooth-ce)"} />
         </svg>
 
         <div
@@ -65,9 +58,7 @@ export const LinearProgress = ({
 
         {showPercentage && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span
-              className="bg-(--fg-card) py-1 px-3 rounded text-(--fg-text)"
-            >
+            <span className="bg-(--fg-card) py-1 px-3 rounded text-(--fg-text)">
               {roundedPercentage}%
             </span>
           </div>

@@ -11,10 +11,7 @@ export const Page = ({ size }: PageProps) => {
   return (
     <Wrapper flexDirection="col">
       <CircleProgress size={size} />
-      <LinearProgress
-        height={size}
-        value={80}
-      />
+      <LinearProgress height={size} value={80} />
     </Wrapper>
   );
 };

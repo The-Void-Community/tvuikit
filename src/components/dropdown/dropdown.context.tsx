@@ -6,7 +6,7 @@ type DropdownContextType = {
   toggle: (state?: boolean) => void;
   dropdownRef: RefObject<HTMLDivElement | null>;
   triggerRef: RefObject<HTMLButtonElement | null>;
-}
+};
 
 export const DropdownContext = createContext<DropdownContextType | null>(null);
 export const useDropdown = () => {
@@ -14,6 +14,6 @@ export const useDropdown = () => {
   if (!context) {
     throw new Error("useDropdown must be used within DropdownProvider");
   }
-  
+
   return context;
 };

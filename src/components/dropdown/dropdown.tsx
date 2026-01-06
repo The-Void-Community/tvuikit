@@ -5,7 +5,10 @@ import { DropdownContext } from "./dropdown.context";
 import { useClickOutside } from "./use-outside-click";
 import { cn } from "../../utils/cn";
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export type DropdownProps = {
   children: ReactNode;
@@ -44,7 +47,7 @@ export const Dropdown = ({
 
   useClickOutside(dropdownRef, () => {
     if (!closeOnClickOutside) {
-      return
+      return;
     }
     if (!opened) {
       return;
@@ -76,10 +79,7 @@ export const Dropdown = ({
     >
       <div
         ref={dropdownRef}
-        className={cn(
-          "relative inline-block",
-          className
-        )}
+        className={cn("relative inline-block", className)}
         {...props}
       >
         {children}
