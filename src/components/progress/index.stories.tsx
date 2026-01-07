@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { IndeterminateLinearProgress } from "./indeterminate-linear-progress";
 import { LinearProgress } from "./linear-progress";
 import { Page } from "./story";
 
@@ -45,6 +46,18 @@ export const LinearWithPercentage: StoryObj<typeof LinearProgress> = {
   args: {
     height: 48,
     value: 24,
+  },
+};
+
+export const IntederminateLinear: StoryObj<typeof IndeterminateLinearProgress> = {
+  render: (args) => (
+    <div>
+      <IndeterminateLinearProgress {...args} />
+    </div>
+  ),
+  args: {
+    height: 48,
+    width: 24,
   },
 };
 

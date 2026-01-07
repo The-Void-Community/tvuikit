@@ -34,6 +34,12 @@
   --fs-h5: 18px;
   --fs-base: 16px;
   --fs-mini: 14px;
+
+  --animate-indeterminate: indeterminate 1s linear infinite;
+  --animate-indeterminate-1s: indeterminate 1s linear infinite;
+  --animate-indeterminate-2s: indeterminate 2s linear infinite;
+  --animate-indeterminate-3s: indeterminate 3s linear infinite;
+  --animate-indeterminate-4s: indeterminate 4s linear infinite;
 }
 
 @layer base {
@@ -55,5 +61,17 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+  }
+}
+
+@keyframes indeterminate {
+  0%, 100% {
+    transform: translateX(402%);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
+  }
+  
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
   }
 }

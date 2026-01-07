@@ -1,22 +1,17 @@
 import { cn } from "../../utils/cn";
 
-export type LinearProgressProps = {
-  value: number;
+import { borderRadius } from "./linear-progress";
+
+export type IndeterminateLinearProgressProps = {
+  width: number;
   height?: number;
-  showPercentage?: boolean;
   className?: string;
-};
+}
 
-export const borderRadius = 8;
-
-export const LinearProgress = ({
-  value,
-  height = 24,
-  showPercentage = false,
+export const IndeterminateLinearProgress = ({
   className,
-}: LinearProgressProps) => {
-  const roundedPercentage = Math.round(value);
-
+  height
+}: IndeterminateLinearProgressProps) => {
   return (
     <div className={cn("w-full", className)}>
       <div className="relative w-full" style={{ height }}>
@@ -32,9 +27,9 @@ export const LinearProgress = ({
         </svg>
 
         <div
-          className="absolute top-0 left-0 h-full overflow-hidden transition-all duration-300"
+          className="animate-(--animate-indeterminate-3s) h-full overflow-hidden transition-all duration-300"
           style={{
-            width: `${value}%`,
+            width: `20%`,
             borderRadius,
           }}
         >
@@ -52,15 +47,7 @@ export const LinearProgress = ({
             />
           </svg>
         </div>
-
-        {showPercentage && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="bg-(--fg-card) py-1 px-3 rounded text-(--fg-text)">
-              {roundedPercentage}%
-            </span>
-          </div>
-        )}
       </div>
     </div>
   );
-};
+}
