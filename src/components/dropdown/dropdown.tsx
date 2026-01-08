@@ -26,6 +26,7 @@ export const Dropdown = ({
 }: DropdownProps) => {
   const [opened, setOpened] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
 
   const toggle = useCallback(
@@ -45,7 +46,7 @@ export const Dropdown = ({
     [setOpened, onChangeState],
   );
 
-  useClickOutside(dropdownRef, () => {
+  useClickOutside(menuRef, () => {
     if (!closeOnClickOutside) {
       return;
     }
@@ -75,7 +76,7 @@ export const Dropdown = ({
 
   return (
     <DropdownContext.Provider
-      value={{ opened, toggle, dropdownRef, triggerRef }}
+      value={{ opened, toggle, dropdownRef, menuRef, triggerRef }}
     >
       <div
         ref={dropdownRef}

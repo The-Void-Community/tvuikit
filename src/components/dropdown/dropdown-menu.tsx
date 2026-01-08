@@ -16,7 +16,7 @@ export const DropdownMenu = ({
   style,
   ...props
 }: DropdownMenuProps) => {
-  const { opened, triggerRef } = useDropdown();
+  const { opened, menuRef, triggerRef } = useDropdown();
 
   // eslint-disable-next-line react-hooks/refs
   if (!triggerRef.current) {
@@ -28,6 +28,7 @@ export const DropdownMenu = ({
 
   const content = (
     <div
+      ref={menuRef}
       className={cn(
         "bg-(--bg-smooth-light) absolute z-100 rounded-lg",
         "flex flex-col min-w-40",

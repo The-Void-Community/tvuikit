@@ -5,6 +5,7 @@ type DropdownContextType = {
   opened: boolean;
   toggle: (state?: boolean) => void;
   dropdownRef: RefObject<HTMLDivElement | null>;
+  menuRef: RefObject<HTMLDivElement | null>;
   triggerRef: RefObject<HTMLButtonElement | null>;
 };
 
