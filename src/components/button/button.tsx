@@ -24,11 +24,11 @@ export const Button = ({
       ? "bg-(--bg-smooth) text-(--fg-mini-text)"
       : `bg-(--bg-card) color-${variant} cursor-pointer`,
 
-    "hover:disabled": props.disabled ? "" : "hover:px-5 hover:py-3",
+    "hover:disabled": props.disabled ? "" : "hover:transform-[scale(1.1)]",
 
     "active:disabled": props.disabled
       ? ""
-      : "active:px-3 active:py-1 active:bg-(--fg-component) active:opacity-[0.7]",
+      : "active:transform-[scale(0.9)] active:bg-(--fg-component) active:opacity-[0.7]",
   };
 
   const finalClassName = overwriteClassName
