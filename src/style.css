@@ -65,13 +65,14 @@
 }
 
 @keyframes indeterminate {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(402%);
-    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  
+
   50% {
     transform: none;
-    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }

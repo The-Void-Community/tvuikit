@@ -49,16 +49,17 @@ export const LinearWithPercentage: StoryObj<typeof LinearProgress> = {
   },
 };
 
-export const IntederminateLinear: StoryObj<typeof IndeterminateLinearProgress> = {
-  render: (args) => (
-    <div>
-      <IndeterminateLinearProgress {...args} />
-    </div>
-  ),
-  args: {
-    height: 48,
-    width: 24,
-  },
-};
+export const IntederminateLinear: StoryObj<typeof IndeterminateLinearProgress> =
+  {
+    render: (args) => (
+      <div>
+        <IndeterminateLinearProgress {...args} />
+      </div>
+    ),
+    args: {
+      height: 48,
+      width: 24,
+    },
+  };
 
 export default meta;

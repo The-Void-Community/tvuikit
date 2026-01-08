@@ -6,11 +6,11 @@ export type IndeterminateLinearProgressProps = {
   width: number;
   height?: number;
   className?: string;
-}
+};
 
 export const IndeterminateLinearProgress = ({
   className,
-  height
+  height,
 }: IndeterminateLinearProgressProps) => {
   return (
     <div className={cn("w-full", className)}>
@@ -50,4 +50,4 @@ export const IndeterminateLinearProgress = ({
       </div>
     </div>
   );
-}
+};

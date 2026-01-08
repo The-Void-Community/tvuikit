@@ -14,7 +14,7 @@ export const useClickOutside = (
       if (ref.current.contains(event.target as Node)) {
         return;
       }
-      
+
       handler(event);
     };
 
