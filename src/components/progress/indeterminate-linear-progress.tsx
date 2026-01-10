@@ -3,7 +3,6 @@ import { cn } from "../../utils/cn";
 import { borderRadius } from "./linear-progress";
 
 export type IndeterminateLinearProgressProps = {
-  width: number;
   height?: number;
   className?: string;
 };

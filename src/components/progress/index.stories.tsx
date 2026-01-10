@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IndeterminateLinearProgress } from "./indeterminate-linear-progress";
 import { LinearProgress } from "./linear-progress";
 import { Page } from "./story";
+import { EllipsisProgress } from "./ellipsis-progress";
+import { Wrapper } from "../wrapper";
 
 const meta: Meta<typeof Page> = {
   component: Page,
@@ -58,8 +60,24 @@ export const IntederminateLinear: StoryObj<typeof IndeterminateLinearProgress> =
     ),
     args: {
       height: 48,
-      width: 24,
     },
   };
+
+export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
+  render: () => (
+    <Wrapper flexDirection="col">
+      <div className="bg-(--fg-default) flex gap-16 w-fit py-8 px-12 rounded-lg">
+        <EllipsisProgress type="pulse" />
+        <EllipsisProgress type="pulse" elements={6} />
+        <EllipsisProgress type="wave" />
+        <EllipsisProgress type="wave" elements={6} />
+        <EllipsisProgress type="run" />
+        <EllipsisProgress type="run" elements={6} />
+        <EllipsisProgress type="orbit" />
+        <EllipsisProgress type="orbit" elements={6} />
+      </div>
+    </Wrapper>
+  )
+}
 
 export default meta;

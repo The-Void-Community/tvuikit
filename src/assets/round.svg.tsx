@@ -1,12 +1,19 @@
-import type { Ref } from "react";
+import type { Ref, SVGProps } from "react";
 
 export type RoundProps = {
   size: number | string;
-  ref: Ref<SVGSVGElement | null>;
-  className: string;
-};
+  ref?: Ref<SVGSVGElement | null>;
+  className?: string;
+  fill?: string;
+} & SVGProps<SVGSVGElement>;
 
-export const Round = ({ size, ref, className }: RoundProps) => {
+export const Round = ({
+  size,
+  ref,
+  className,
+  fill = "#EDEDED",
+  ...props
+}: RoundProps) => {
   return (
     <svg
       ref={ref}
@@ -16,8 +23,9 @@ export const Round = ({ size, ref, className }: RoundProps) => {
       fill="none"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
-      <circle cx="6" cy="6" r="6" fill="#EDEDED" />
+      <circle cx="6" cy="6" r="6" fill={fill} />
     </svg>
   );
 };
