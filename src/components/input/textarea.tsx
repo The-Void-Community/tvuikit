@@ -1,4 +1,8 @@
-import type { ChangeEvent, DetailedHTMLProps, TextareaHTMLAttributes } from "react";
+import type {
+  ChangeEvent,
+  DetailedHTMLProps,
+  TextareaHTMLAttributes,
+} from "react";
 
 import { cn } from "../../utils/cn";
 
@@ -34,12 +38,12 @@ export const Textarea = ({
     const lineHeight = parseInt(getComputedStyle(element).lineHeight);
     const newHeight = Math.min(
       Math.max(element.scrollHeight, minimalRowsHeight * lineHeight),
-      maximalRowsHeight * lineHeight
+      maximalRowsHeight * lineHeight,
     );
     element.style.height = `${newHeight}px`;
 
     onChange?.(event);
-  }
+  };
 
   return (
     <textarea
