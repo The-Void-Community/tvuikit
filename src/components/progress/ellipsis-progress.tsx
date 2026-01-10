@@ -1,5 +1,5 @@
-import { Round } from "../../assets/round.svg"
-import { ANIMATIONS } from "../../variables/animations/all"
+import { Round } from "../../assets/round.svg";
+import { ANIMATIONS } from "../../variables/animations/all";
 
 export type EllipsisProgressProps = {
   type?: Lowercase<keyof typeof ANIMATIONS>;
@@ -7,7 +7,7 @@ export type EllipsisProgressProps = {
   elements?: number;
   duration?: number;
   multiplier?: number;
-}
+};
 
 export const EllipsisProgress = ({
   type = "pulse",
@@ -16,9 +16,7 @@ export const EllipsisProgress = ({
   duration = 1,
   multiplier = 0.1,
 }: EllipsisProgressProps) => {
-  const additionalClass = type === "orbit"
-    ? "absolute"
-    : "";
+  const additionalClass = type === "orbit" ? "absolute" : "";
 
   if (elements <= 0) {
     throw new Error("Elements can not be zero");
@@ -31,12 +29,18 @@ export const EllipsisProgress = ({
   return (
     <div className="flex flex-row gap-2">
       {new Array(elements).fill(elements).map((count, index) => (
-        <Round key={count+index} size={size} fill="var(--bg-smooth)" style={{
-          animation: `var(--animate-ellipse-${type}-1)`,
-          animationDuration: duration + "s",
-          animationDelay: `${multiplier * index}s`,
-        }} className={additionalClass} />
+        <Round
+          key={count + index}
+          size={size}
+          fill="var(--bg-smooth)"
+          style={{
+            animation: `var(--animate-ellipse-${type}-1)`,
+            animationDuration: duration + "s",
+            animationDelay: `${multiplier * index}s`,
+          }}
+          className={additionalClass}
+        />
       ))}
     </div>
   );
-}
+};

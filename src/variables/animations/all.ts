@@ -7,5 +7,5 @@ export const ANIMATIONS = {
   PULSE,
   WAVE,
   RUN,
-  ORBIT
+  ORBIT,
 };

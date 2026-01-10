@@ -77,7 +77,7 @@ export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
         <EllipsisProgress type="orbit" elements={6} />
       </div>
     </Wrapper>
-  )
-}
+  ),
+};
 
 export default meta;
