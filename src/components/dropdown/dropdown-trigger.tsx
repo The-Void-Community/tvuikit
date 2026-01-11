@@ -12,7 +12,7 @@ export const DropdownTrigger = ({
 
   const handleClick = () => {
     toggle();
-  }
+  };
 
   return (
     <Button

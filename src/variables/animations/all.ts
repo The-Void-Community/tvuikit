@@ -4,4 +4,4 @@ export const enum ANIMATIONS {
   RUN,
   ORBIT,
   APPEARANCE,
-};
+}

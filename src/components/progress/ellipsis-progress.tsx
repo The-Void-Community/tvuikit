@@ -10,7 +10,7 @@ export type EllipsisProgressProps = {
   delay?: number;
   animation?: string;
   color?: string;
-  container?: <T extends { children: ReactNode }>(props: T) => ReactNode,
+  container?: <T extends { children: ReactNode }>(props: T) => ReactNode;
   autoPaddingDisabled?: boolean;
 };
 
@@ -26,10 +26,10 @@ export const EllipsisProgress = ({
   autoPaddingDisabled = false,
 }: EllipsisProgressProps) => {
   const additionalClass = type === "orbit" ? "absolute" : "";
-  const additionalStyle = autoPaddingDisabled
-    ? {}
-    : { padding: size * 2 }; 
-  const animation = animate ? `var(${animate})` : `var(--animate-ellipse-${type})`;
+  const additionalStyle = autoPaddingDisabled ? {} : { padding: size * 2 };
+  const animation = animate
+    ? `var(${animate})`
+    : `var(--animate-ellipse-${type})`;
 
   if (elements <= 0) {
     throw new Error("Elements can not be zero");
@@ -54,11 +54,7 @@ export const EllipsisProgress = ({
   ));
 
   if (Container) {
-    return (
-      <Container>
-        {rounds}
-      </Container>
-    )
+    return <Container>{rounds}</Container>;
   }
 
   return (

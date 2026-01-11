@@ -76,16 +76,19 @@ export const EllipsisPreset: StoryObj<typeof EllipsisProgress> = {
         <EllipsisProgress type="orbit" />
         <EllipsisProgress type="orbit" elements={6} />
         <EllipsisProgress type="appearance" duration={1} delay={-0.2} />
-        <EllipsisProgress type="appearance" elements={6} duration={1} delay={-0.1} />
+        <EllipsisProgress
+          type="appearance"
+          elements={6}
+          duration={1}
+          delay={-0.1}
+        />
       </div>
     </Wrapper>
   ),
 };
 
 export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
-  render: (args) => (
-    <EllipsisProgress {...args} />
-  ),
+  render: (args) => <EllipsisProgress {...args} />,
 
   args: {
     size: 48,
@@ -94,8 +97,8 @@ export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
     type: "orbit",
     duration: 1,
     autoPaddingDisabled: true,
-    color: "var(--bg-smooth)"
-  }
-}
+    color: "var(--bg-smooth)",
+  },
+};
 
 export default meta;
