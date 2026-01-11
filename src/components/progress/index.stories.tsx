@@ -63,10 +63,10 @@ export const IntederminateLinear: StoryObj<typeof IndeterminateLinearProgress> =
     },
   };
 
-export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
+export const EllipsisPreset: StoryObj<typeof EllipsisProgress> = {
   render: () => (
     <Wrapper flexDirection="col">
-      <div className="bg-(--fg-default) flex gap-16 w-fit py-8 px-12 rounded-lg">
+      <div className="bg-(--fg-default) flex flex-wrap gap-16 w-fit py-8 px-12 rounded-lg">
         <EllipsisProgress type="pulse" />
         <EllipsisProgress type="pulse" elements={6} />
         <EllipsisProgress type="wave" />
@@ -75,9 +75,27 @@ export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
         <EllipsisProgress type="run" elements={6} />
         <EllipsisProgress type="orbit" />
         <EllipsisProgress type="orbit" elements={6} />
+        <EllipsisProgress type="appearance" duration={1} delay={-0.2} />
+        <EllipsisProgress type="appearance" elements={6} duration={1} delay={-0.1} />
       </div>
     </Wrapper>
   ),
 };
+
+export const Ellipsis: StoryObj<typeof EllipsisProgress> = {
+  render: (args) => (
+    <EllipsisProgress {...args} />
+  ),
+
+  args: {
+    size: 48,
+    delay: 0.2,
+    elements: 3,
+    type: "orbit",
+    duration: 1,
+    autoPaddingDisabled: true,
+    color: "var(--bg-smooth)"
+  }
+}
 
 export default meta;

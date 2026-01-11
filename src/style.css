@@ -41,27 +41,13 @@
   --animate-indeterminate-3s: indeterminate 3s linear infinite;
   --animate-indeterminate-4s: indeterminate 4s linear infinite;
 
-  --animate-ellipse: infinite both;
+  --animate-ellipse: 1.4s ease-in-out 0s infinite both;
 
-  --animate-ellipse-1: 1.4s ease-in-out 0s var(--animate-ellipse);
-  --animate-ellipse-2: 1.4s ease-in-out 0.16s var(--animate-ellipse);
-  --animate-ellipse-3: 1.4s ease-in-out 0.32s var(--animate-ellipse);
-
-  --animate-ellipse-pulse-1: ellipsePulse var(--animate-ellipse-1);
-  --animate-ellipse-pulse-2: ellipsePulse var(--animate-ellipse-2);
-  --animate-ellipse-pulse-3: ellipsePulse var(--animate-ellipse-3);
-
-  --animate-ellipse-wave-1: ellipseWave var(--animate-ellipse-1);
-  --animate-ellipse-wave-2: ellipseWave var(--animate-ellipse-2);
-  --animate-ellipse-wave-3: ellipseWave var(--animate-ellipse-3);
-
-  --animate-ellipse-run-1: ellipseRun var(--animate-ellipse-1);
-  --animate-ellipse-run-2: ellipseRun var(--animate-ellipse-2);
-  --animate-ellipse-run-3: ellipseRun var(--animate-ellipse-3);
-
-  --animate-ellipse-orbit-1: ellipseOrbit var(--animate-ellipse-1);
-  --animate-ellipse-orbit-2: ellipseOrbit var(--animate-ellipse-2);
-  --animate-ellipse-orbit-3: ellipseOrbit var(--animate-ellipse-3);
+  --animate-ellipse-pulse: ellipsePulse var(--animate-ellipse);
+  --animate-ellipse-wave: ellipseWave var(--animate-ellipse);
+  --animate-ellipse-run: ellipseRun var(--animate-ellipse);
+  --animate-ellipse-orbit: ellipseOrbit var(--animate-ellipse);
+  --animate-ellipse-appearance: ellipseAppearance var(--animate-ellipse);
 }
 
 @layer base {
@@ -102,11 +88,11 @@
 @keyframes ellipsePulse {
   0%,
   100% {
-    transform: none;
+    transform: scale(1);
   }
 
   50% {
-    transform: scale(1.8);
+    transform: scale(1.6);
   }
 }
 
@@ -144,5 +130,15 @@
 
   100% {
     transform: rotate(-360deg) translateX(200%) rotate(360deg);
+  }
+}
+
+@keyframes ellipseAppearance {
+  0%, 100% {
+    opacity: 0;
+  }
+  
+  50% {
+    opacity: 1;
   }
 }
