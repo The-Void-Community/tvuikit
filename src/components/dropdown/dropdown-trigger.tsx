@@ -10,14 +10,18 @@ export const DropdownTrigger = ({
 }: DropdownTriggerProps) => {
   const { toggle, opened, triggerRef } = useDropdown();
 
+  const handleClick = () => {
+    toggle();
+  }
+
   return (
     <Button
       ref={triggerRef}
-      onClick={() => toggle()}
+      onClick={handleClick}
       aria-expanded={opened}
       aria-haspopup="true"
-      {...props}
       className={className}
+      {...props}
     >
       {children}
     </Button>
