@@ -11,16 +11,23 @@ type DivProps = DetailedHTMLProps<
 >;
 
 export type DropdownProps = {
-  children: ReactNode;
+  children: [ReactNode, ReactNode];
   onChangeState?: (opened: boolean) => void;
   closeOnClickOutside?: boolean;
   className?: string;
+  openToOtherSide?: boolean;
+  defaultHorizontalPosition?: "left"|"right";
+  defaultVertialPosition?: "top"|"bottom";
+  
 } & Omit<DivProps, "ref">;
 
 export const Dropdown = ({
   children,
   onChangeState,
   closeOnClickOutside = true,
+  openToOtherSide = true,
+  defaultHorizontalPosition = "right",
+  defaultVertialPosition = "bottom",
   className,
   ...props
 }: DropdownProps) => {
@@ -76,7 +83,16 @@ export const Dropdown = ({
 
   return (
     <DropdownContext.Provider
-      value={{ opened, toggle, dropdownRef, menuRef, triggerRef }}
+      value={{
+        opened,
+        toggle,
+        dropdownRef,
+        menuRef,
+        triggerRef,
+        openToOtherSide,
+        defaultHorizontalPosition,
+        defaultVertialPosition,
+      }}
     >
       <div
         ref={dropdownRef}

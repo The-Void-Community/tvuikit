@@ -1,13 +1,10 @@
-/* eslint-disable react-hooks/refs */
 import { useCallback, useLayoutEffect, type DetailedHTMLProps, type HTMLAttributes } from "react";
 import { createPortal } from "react-dom";
 
 import { useDropdown } from "./dropdown.context";
 import { cn } from "../../utils/cn";
 
-export type DropdownMenuProps = {
-  openToOtherSide?: boolean;
-} & DetailedHTMLProps<
+export type DropdownMenuProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >;
@@ -16,17 +13,16 @@ export const DropdownMenu = ({
   children,
   className,
   style,
-  openToOtherSide = true,
   ...props
 }: DropdownMenuProps) => {
-  const { opened, menuRef, triggerRef } = useDropdown();
+  const { opened, menuRef, triggerRef, defaultHorizontalPosition, defaultVertialPosition, openToOtherSide } = useDropdown();
 
-  const correctPosition = useCallback((align: "left"|"top") => {
-    const windowProperty = align === "left" ? "innerWidth" : "innerHeight";
-    const positionScale = align === "left" ? "width" : "height";
-    const inverseAlign = align === "left" ? "right" : "bottom";
+  const correctPosition = useCallback((align: "x"|"y") => {
+    const windowProperty = align === "x" ? "innerWidth" : "innerHeight";
+    const positionScale = align === "x" ? "width" : "height";
+    const inverseAlign = align === "x" ? "right" : "bottom";
 
-    return (position: DOMRect) => {
+    return (position: DOMRect, triggerHeight: number) => {
       if (!menuRef.current) {
         return
       }
@@ -37,7 +33,8 @@ export const DropdownMenu = ({
 
       const beyondBorder = position[inverseAlign] - window[windowProperty];
       if (openToOtherSide) {
-        menuRef.current.style[align] = `${position[align] - beyondBorder}px`;
+        const vertical = align === "y" ? triggerHeight : 0
+        menuRef.current.style[align] = `${position[align] - beyondBorder - vertical}px`;
         return;
       }
 
@@ -52,22 +49,38 @@ export const DropdownMenu = ({
   }, [menuRef, openToOtherSide]);
 
   useLayoutEffect(() => {
-    if (!menuRef.current || !opened) {
+    if (!menuRef.current || !triggerRef.current || !opened) {
       return;
     }
-
+    
+    const triggerRect = triggerRef.current.getBoundingClientRect();
     const position = menuRef.current.getBoundingClientRect();
 
-    correctPosition("left")(position);
-    correctPosition("top")(position);
-  }, [opened, correctPosition, menuRef]);
+    const leftOffset = triggerRect.left + triggerRect.width / 2 + window.scrollX;
+    const topOffset = triggerRect.top + triggerRect.height + window.scrollY;
 
-  if (!opened || !triggerRef.current) {
+    if (defaultHorizontalPosition === "right") {
+      menuRef.current.style.left = `${leftOffset}px`;
+    } else {
+      menuRef.current.style.left = `${leftOffset - position.width}px`;
+    }
+
+    if (defaultVertialPosition === "bottom") {
+      menuRef.current.style.top = `${topOffset}px`;
+    } else {
+      menuRef.current.style.top = `${topOffset - position.height - triggerRect.height}px`;
+    }
+
+    const newPosition = menuRef.current.getBoundingClientRect();
+
+    correctPosition("x")(newPosition, triggerRect.height);
+    correctPosition("y")(newPosition, triggerRect.height);
+  }, [opened, correctPosition, menuRef, triggerRef, defaultHorizontalPosition, defaultVertialPosition]);
+
+  if (!opened) {
     return null;
   }
 
-  const triggerRect = triggerRef.current.getBoundingClientRect();
-  
   const content = (
     <div
       ref={menuRef}
@@ -77,8 +90,6 @@ export const DropdownMenu = ({
         className,
       )}
       style={{
-        left: `${triggerRect.left + triggerRect.width / 2 + window.scrollX}px`,
-        top: `${triggerRect.top + triggerRect.height + window.scrollY}px`,
         ...style,
       }}
       role="menu"

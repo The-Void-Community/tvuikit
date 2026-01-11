@@ -7,6 +7,9 @@ type DropdownContextType = {
   dropdownRef: RefObject<HTMLDivElement | null>;
   menuRef: RefObject<HTMLDivElement | null>;
   triggerRef: RefObject<HTMLButtonElement | null>;
+  openToOtherSide: boolean;
+  defaultHorizontalPosition: "left"|"right";
+  defaultVertialPosition: "top"|"bottom";
 };
 
 export const DropdownContext = createContext<DropdownContextType | null>(null);
