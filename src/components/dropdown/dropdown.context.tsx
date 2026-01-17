@@ -8,6 +8,7 @@ type DropdownContextType = {
   menuRef: RefObject<HTMLDivElement | null>;
   triggerRef: RefObject<HTMLButtonElement | null>;
   openToOtherSide: boolean;
+  menuAlign: "left" | "center" | "right";
   defaultHorizontalPosition: "left" | "right";
   defaultVertialPosition: "top" | "bottom";
 };

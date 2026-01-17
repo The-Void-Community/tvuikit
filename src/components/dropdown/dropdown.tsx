@@ -16,6 +16,7 @@ export type DropdownProps = {
   closeOnClickOutside?: boolean;
   className?: string;
   openToOtherSide?: boolean;
+  menuAlign?: "left" | "center" | "right";
   defaultHorizontalPosition?: "left" | "right";
   defaultVertialPosition?: "top" | "bottom";
 } & Omit<DivProps, "ref">;
@@ -27,6 +28,7 @@ export const Dropdown = ({
   openToOtherSide = true,
   defaultHorizontalPosition = "right",
   defaultVertialPosition = "bottom",
+  menuAlign = "center",
   className,
   ...props
 }: DropdownProps) => {
@@ -91,6 +93,7 @@ export const Dropdown = ({
         openToOtherSide,
         defaultHorizontalPosition,
         defaultVertialPosition,
+        menuAlign
       }}
     >
       <div
