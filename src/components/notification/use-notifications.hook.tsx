@@ -27,7 +27,7 @@ type ExtendedNotificationType = Omit<NotificationType, "text"> & {
  */
 export const useNotifications = (
   duration: number,
-  delay: number = (duration = 1000),
+  delay: number = 1000,
 ) => {
   const notifications = useRef<{ [key: string]: NotificationType }>({});
 
