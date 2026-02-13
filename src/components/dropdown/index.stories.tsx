@@ -9,7 +9,6 @@ const meta: Meta<typeof Dropdown> = {
   },
 };
 
-export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 export const Default: Story = {
@@ -43,3 +42,5 @@ export const WithCustomTrigger: Story = {
     </div>
   ),
 };
+
+export default meta;

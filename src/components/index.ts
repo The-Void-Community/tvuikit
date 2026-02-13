@@ -8,5 +8,6 @@ export * from "./modal";
 export * from "./progress";
 export * from "./switch";
 export * from "./wrapper";
+export * from "./notification";
 
 export * as Guildline from "./guideline";

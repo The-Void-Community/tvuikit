@@ -53,6 +53,7 @@
 @layer base {
   .text-base {
     font-size: var(--fs-base);
+    color: var(--fg-default);
   }
 
   .text-mini {
