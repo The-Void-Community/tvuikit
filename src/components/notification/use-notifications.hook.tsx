@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { NotificationProps } from "./notification.component";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { Notification } from "./notification.component";
@@ -21,14 +21,17 @@ type ExtendedNotificationType = Omit<NotificationType, "text"> & {
   text: NotificateParameter;
 };
 
-/**
- * @param duration duration of notification in miliseconds
- * @param delay delay between notifications in miliseconds
- */
-export const useNotifications = (
+export const useNotifications = ({
+  duration,
+  delay = 1000,
+  usePortal,
+}: {
+  /** duration of notification in miliseconds */
   duration: number,
-  delay: number = 1000,
-) => {
+  /** delay between notifications in miliseconds */
+  delay?: number,
+  usePortal?: boolean,
+}) => {
   const notifications = useRef<{ [key: string]: NotificationType }>({});
 
   const [queue, setQueue] = useState<ExtendedNotificationType[]>([]);
@@ -40,6 +43,8 @@ export const useNotifications = (
   const count = useRef<number>(0);
   const timeoutsRef = useRef<Map<string, number>>(new Map());
   const delayTimeoutRef = useRef<number | null>(null);
+
+  const documentElement = useRef<Document|null>(null);
 
   const close = useCallback(
     (id: string) => {
@@ -141,7 +146,7 @@ export const useNotifications = (
     };
   }, []);
 
-  const NotificationComponent = createPortal(
+  const Component = (
     <div className="fixed w-0 h-0">
       <Notification
         {...(current || {})}
@@ -155,9 +160,18 @@ export const useNotifications = (
             : null
         }
       />
-    </div>,
-    document.body,
+    </div>
   );
+
+  useLayoutEffect(() => {
+    documentElement.current = document;
+  }, []);
+
+  const NotificationComponent = usePortal
+    ? documentElement.current
+      ? createPortal(Component, documentElement.current.body)
+      : null
+    : Component;
 
   return {
     NotificationComponent,
