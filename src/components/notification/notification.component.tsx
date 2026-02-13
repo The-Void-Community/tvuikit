@@ -5,18 +5,24 @@ import { X } from "tvicons";
 
 import { cn } from "../../utils";
 
-export type NotificationProps = (({
-  text?: ReactNode|null|undefined,
-  closed?: true;
-} | {
-  text: ReactNode,
-  closed?: false;
-}) & {
+export type NotificationProps = (
+  | {
+      text?: ReactNode | null | undefined;
+      closed?: true;
+    }
+  | {
+      text: ReactNode;
+      closed?: false;
+    }
+) & {
   close: (id: string) => void;
   overwriteClassName?: boolean;
   disablePositionAndInset?: boolean;
   id?: string;
-} & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "children"|"id">);
+} & Omit<
+    DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+    "children" | "id"
+  >;
 
 export const Notification = ({
   text,
@@ -42,7 +48,10 @@ export const Notification = ({
       {...props}
     >
       {typeof text === "string" ? <span>{text}</span> : text}
-      <X className="cursor-pointer hover:opacity-70 transition-opacity" onClick={() => close(id)} />
+      <X
+        className="cursor-pointer hover:opacity-70 transition-opacity"
+        onClick={() => close(id)}
+      />
     </div>
   );
 };

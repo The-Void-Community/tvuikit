@@ -27,7 +27,7 @@ export const DropdownMenu = ({
     defaultHorizontalPosition,
     defaultVertialPosition,
     openToOtherSide,
-    menuAlign
+    menuAlign,
   } = useDropdown();
 
   const correctPosition = useCallback(
@@ -73,11 +73,12 @@ export const DropdownMenu = ({
     const triggerRect = triggerRef.current.getBoundingClientRect();
     const position = menuRef.current.getBoundingClientRect();
 
-    const multipliyer = menuAlign === "center"
-      ? triggerRect.width / 2
-      : menuAlign === "right"
-        ? triggerRect.width
-        : 0
+    const multipliyer =
+      menuAlign === "center"
+        ? triggerRect.width / 2
+        : menuAlign === "right"
+          ? triggerRect.width
+          : 0;
 
     const leftOffset = triggerRect.left + window.scrollX + multipliyer;
     const topOffset = triggerRect.top + triggerRect.height + window.scrollY;
@@ -98,7 +99,15 @@ export const DropdownMenu = ({
 
     correctPosition("x")(newPosition, triggerRect.height);
     correctPosition("y")(newPosition, triggerRect.height);
-  }, [opened, correctPosition, menuRef, triggerRef, defaultHorizontalPosition, defaultVertialPosition, menuAlign]);
+  }, [
+    opened,
+    correctPosition,
+    menuRef,
+    triggerRef,
+    defaultHorizontalPosition,
+    defaultVertialPosition,
+    menuAlign,
+  ]);
 
   if (!opened) {
     return null;

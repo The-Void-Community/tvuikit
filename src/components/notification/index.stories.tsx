@@ -21,11 +21,11 @@ export const Default: Story = {
     <Wrapper>
       <Notification {...args} />
     </Wrapper>
-  )
+  ),
 };
 
 export const NotificationsTest: StoryObj<typeof Notifications> = {
-  render: Notifications
-}
+  render: Notifications,
+};
 
 export default meta;

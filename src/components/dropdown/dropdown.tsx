@@ -93,7 +93,7 @@ export const Dropdown = ({
         openToOtherSide,
         defaultHorizontalPosition,
         defaultVertialPosition,
-        menuAlign
+        menuAlign,
       }}
     >
       <div
