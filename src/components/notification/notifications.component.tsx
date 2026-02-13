@@ -3,10 +3,10 @@ import { Wrapper } from "../wrapper";
 import { useNotifications } from "./use-notifications.hook";
 
 export const Notifications = () => {
-  const { NotificationComponent, notificate, closeAll } = useNotifications(
-    3000,
-    1000,
-  );
+  const { NotificationComponent, notificate, closeAll } = useNotifications({
+    duration: 3000,
+    delay: 1000,
+  });
 
   return (
     <Wrapper>

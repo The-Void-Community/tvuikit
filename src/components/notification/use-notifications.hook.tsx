@@ -24,7 +24,7 @@ type ExtendedNotificationType = Omit<NotificationType, "text"> & {
 export const useNotifications = ({
   duration,
   delay = 1000,
-  usePortal,
+  usePortal = true,
 }: {
   /** duration of notification in miliseconds */
   duration: number,
