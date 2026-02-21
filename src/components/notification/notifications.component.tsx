@@ -9,7 +9,7 @@ export const Notifications = () => {
   });
 
   return (
-    <Wrapper>
+    <Wrapper className="page">
       {NotificationComponent}
       <Button
         onClick={() => {
