@@ -41,32 +41,31 @@ export const Notification = ({
   count,
   ...props
 }: NotificationProps) => {
-  const CloseAllElement = (count && closeAll) ? (
-    <div className={cn(
-      "bg-(--bg-card) rounded-lg py-1 px-5",
-      "flex gap-1",
-      "w-fit h-fit text-mini",
-      "noselect"
-    )}>
-      <span>Уведомлений: {count}</span>
-      <span
-        onClick={closeAll}
-        className="cursor-pointer"
-      >Закрыть всё? ×</span>
-    </div>
-  ) : null;
+  const CloseAllElement =
+    count && closeAll ? (
+      <div
+        className={cn(
+          "bg-(--bg-card) rounded-lg py-1 px-5",
+          "flex gap-1",
+          "w-fit h-fit text-mini",
+          "noselect",
+        )}
+      >
+        <span>Уведомлений: {count}</span>
+        <span onClick={closeAll} className="cursor-pointer">
+          Закрыть всё? ×
+        </span>
+      </div>
+    ) : null;
 
-  const List = (openListButtonVisible && showAll) ? (
-    <div className={cn(
-      "bg-(--bg-card) rounded-lg py-1 px-5",
-      "text-mini"
-    )}>
-      <span
-        className="cursor-pointer"
-        onClick={showAll}
-      >Открыть список</span>
-    </div>
-  ) : null;
+  const List =
+    openListButtonVisible && showAll ? (
+      <div className={cn("bg-(--bg-card) rounded-lg py-1 px-5", "text-mini")}>
+        <span className="cursor-pointer" onClick={showAll}>
+          Открыть список
+        </span>
+      </div>
+    ) : null;
 
   return (
     <div
@@ -81,10 +80,12 @@ export const Notification = ({
       )}
       {...props}
     >
-      <div className={cn(
-        "bg-(--bg-card) text-base rounded-lg py-2 px-5",
-        "flex gap-3 items-center shadow-lg",
-      )}>
+      <div
+        className={cn(
+          "bg-(--bg-card) text-base rounded-lg py-2 px-5",
+          "flex gap-3 items-center shadow-lg",
+        )}
+      >
         {typeof text === "string" ? <span>{text}</span> : text}
         <X
           className="cursor-pointer hover:opacity-70 transition-opacity"

@@ -8,7 +8,9 @@ export type ModalProps = {
   container: Element | DocumentFragment;
   portalKey?: Key | null;
   zIndex?: number;
-  onModalElementClick: (event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => void;
+  onModalElementClick: (
+    event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
+  ) => void;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export const Modal = ({

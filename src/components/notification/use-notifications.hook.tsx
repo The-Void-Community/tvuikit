@@ -3,7 +3,13 @@ import type { ReactNode } from "react";
 import type { LastNotification } from "./last-notifications.component";
 import type { NotificationProps } from "./notification.component";
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 
 import { LastNotifications } from "./last-notifications.component";
@@ -27,18 +33,21 @@ type ExtendedNotificationType = Omit<NotificationType, "text"> & {
 export const useNotifications = ({
   duration,
   delay = 1000,
-  allNotificationsEnabled = true
+  allNotificationsEnabled = true,
 }: {
   /** duration of notification in miliseconds */
-  duration: number,
+  duration: number;
   /** delay between notifications in miliseconds */
-  delay?: number,
-  allNotificationsEnabled?: boolean
+  delay?: number;
+  allNotificationsEnabled?: boolean;
 }) => {
   const notifications = useRef<{ [key: string]: NotificationType }>({});
 
-  const [lastNotifications, setLastNotifications] = useState<LastNotification[]>([]);
-  const [lastNotificationsShowed, setLastNotificationsShowed] = useState<boolean>(false);
+  const [lastNotifications, setLastNotifications] = useState<
+    LastNotification[]
+  >([]);
+  const [lastNotificationsShowed, setLastNotificationsShowed] =
+    useState<boolean>(false);
 
   const [queue, setQueue] = useState<ExtendedNotificationType[]>([]);
   const [closed, setClosed] = useState<boolean>(true);
@@ -50,24 +59,33 @@ export const useNotifications = ({
   const timeoutsRef = useRef<Map<string, number>>(new Map());
   const delayTimeoutRef = useRef<number | null>(null);
 
-  const documentElement = useRef<Document|null>(null);
+  const documentElement = useRef<Document | null>(null);
 
-  const resolveText = useCallback((element: ExtendedNotificationType): ReactNode => {
-    return element.text instanceof Function
-      ? element.text({ count: count.current, current: element, queue })
-      : element.text
-  }, [queue]);
+  const resolveText = useCallback(
+    (element: ExtendedNotificationType): ReactNode => {
+      return element.text instanceof Function
+        ? element.text({ count: count.current, current: element, queue })
+        : element.text;
+    },
+    [queue],
+  );
 
-  const addLastNotification = useCallback((notification: ExtendedNotificationType) => {
-    const text = resolveText(notification);
-    setLastNotifications((previous) => {
-      return [...previous, { id: notification.id, text, position: count.current }];
-    });
-  }, [resolveText]);
+  const addLastNotification = useCallback(
+    (notification: ExtendedNotificationType) => {
+      const text = resolveText(notification);
+      setLastNotifications((previous) => {
+        return [
+          ...previous,
+          { id: notification.id, text, position: count.current },
+        ];
+      });
+    },
+    [resolveText],
+  );
 
   const closeLastNotification = useCallback((id: string) => {
     setLastNotifications((previous) => {
-      return previous.filter(notification => notification.id !== id);
+      return previous.filter((notification) => notification.id !== id);
     });
   }, []);
 
@@ -174,7 +192,7 @@ export const useNotifications = ({
       }
     };
   }, []);
-  
+
   useLayoutEffect(() => {
     documentElement.current = document;
   }, []);
@@ -187,20 +205,18 @@ export const useNotifications = ({
         closed={closed}
         count={queue.length}
         closeAll={closeAll}
-        text={
-          current
-            ? resolveText(current)
-            : null
-        }
+        text={current ? resolveText(current) : null}
       />
 
-      {allNotificationsEnabled && (<LastNotifications
-        notifications={lastNotifications}
-        showed={lastNotificationsShowed}
-        closeAll={closeAll}
-        setShowed={(state) => setLastNotificationsShowed(state)}
-        close={closeLastNotification}
-      />)}
+      {allNotificationsEnabled && (
+        <LastNotifications
+          notifications={lastNotifications}
+          showed={lastNotificationsShowed}
+          closeAll={closeAll}
+          setShowed={(state) => setLastNotificationsShowed(state)}
+          close={closeLastNotification}
+        />
+      )}
     </div>
   );
 

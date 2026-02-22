@@ -5,16 +5,16 @@ import { cn } from "../../utils";
 
 export type LastNotification = {
   id: string;
-  text: ReactNode,
-  position: number;  
-}
+  text: ReactNode;
+  position: number;
+};
 
 export type LastNotificationsProps = {
-  notifications: LastNotification[],
+  notifications: LastNotification[];
   showed: boolean;
   setShowed: (state: boolean) => void;
   close: (id: string) => void;
-  closeAll: () => void,
+  closeAll: () => void;
   heightMultipliyer?: number;
   notificationComponentClassName?: string;
   maxHeightTwClass?: string;
@@ -43,7 +43,7 @@ export const LastNotifications = ({
         showed
           ? "opacity-100 scale-100 translate-x-0"
           : "opacity-0 scale-95 -translate-x-20 pointer-events-none",
-        className
+        className,
       )}
       {...props}
     >
@@ -57,17 +57,20 @@ export const LastNotifications = ({
           "w-120 overflow-auto pr-2",
           "flex flex-col gap-2",
           maxHeight,
-          notificationComponentClassName
+          notificationComponentClassName,
         )}
         style={{
-          height: `calc(var(--spacing) * ${notifications.length <= 3 ? 3 : notifications.length} * ${multipliyer})`
+          height: `calc(var(--spacing) * ${notifications.length <= 3 ? 3 : notifications.length} * ${multipliyer})`,
         }}
       >
         {notifications.map((element, index) => (
-          <div className={cn(
-            "bg-(--bg-card) py-1 px-2 rounded-lg",
-            "flex gap-2 w-full justify-between",
-          )} key={index}>
+          <div
+            className={cn(
+              "bg-(--bg-card) py-1 px-2 rounded-lg",
+              "flex gap-2 w-full justify-between",
+            )}
+            key={index}
+          >
             <span>{element.position}.</span>
             <div>{element.text}</div>
             <X className="cursor-pointer" onClick={() => close(element.id)} />
@@ -75,5 +78,5 @@ export const LastNotifications = ({
         ))}
       </div>
     </div>
-  )
+  );
 };
