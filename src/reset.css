@@ -29,3 +29,27 @@ h4 {
 h5 {
   font-size: var(--fs-h5);
 }
+
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 1em;
+  
+  background: var(--bg-smooth-light);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+
+  background-color: var(--bg-default);
+  border: 1px solid var(--fg-mini-text-30);
+}
+
+*::-webkit-resizer {
+  background-color: var(--bg-smooth-light);
+
+  border-right: 0.3em double var(--fg-default);
+  border-bottom: 0.3em double var(--fg-default);
+}

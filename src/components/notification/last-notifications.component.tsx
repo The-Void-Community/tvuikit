@@ -18,6 +18,7 @@ export type LastNotificationsProps = {
   heightMultipliyer?: number;
   notificationComponentClassName?: string;
   maxHeightTwClass?: string;
+  maxWidthTwClass?: string;
 } & Omit<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   "children"
@@ -30,7 +31,8 @@ export const LastNotifications = ({
   setShowed,
   className,
   heightMultipliyer: multipliyer = 4.5,
-  maxHeightTwClass: maxHeight = "max-h-60",
+  maxHeightTwClass: maxHeight = "max-h-100",
+  maxWidthTwClass: maxWidth = "max-w-160",
   notificationComponentClassName,
   ...props
 }: LastNotificationsProps) => {
@@ -56,7 +58,9 @@ export const LastNotifications = ({
           "transition-[height] duration-400 ease-in-out",
           "w-120 overflow-auto pr-2",
           "flex flex-col gap-2",
-          maxHeight,
+          "min-h-30 min-w-40",
+          "resize",
+          maxHeight, maxWidth,
           notificationComponentClassName,
         )}
         style={{
