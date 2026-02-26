@@ -51,7 +51,10 @@ export const LastNotifications = ({
     >
       <div className="flex gap-2 items-center">
         <h3>Ваши уведомления</h3>
-        <CrossIcon className="cursor-pointer" onClick={() => setShowed(false)} />
+        <CrossIcon
+          className="cursor-pointer"
+          onClick={() => setShowed(false)}
+        />
       </div>
       <div
         className={cn(
@@ -60,7 +63,8 @@ export const LastNotifications = ({
           "flex flex-col gap-2",
           "min-h-30 min-w-40",
           "resize",
-          maxHeight, maxWidth,
+          maxHeight,
+          maxWidth,
           notificationComponentClassName,
         )}
         style={{
@@ -77,7 +81,10 @@ export const LastNotifications = ({
           >
             <span>{element.position}.</span>
             <div>{element.text}</div>
-            <CrossIcon className="cursor-pointer" onClick={() => close(element.id)} />
+            <CrossIcon
+              className="cursor-pointer"
+              onClick={() => close(element.id)}
+            />
           </div>
         ))}
       </div>

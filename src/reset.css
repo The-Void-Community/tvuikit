@@ -36,7 +36,7 @@ h5 {
 
 *::-webkit-scrollbar-track {
   border-radius: 1em;
-  
+
   background: var(--bg-smooth-light);
 }
 
