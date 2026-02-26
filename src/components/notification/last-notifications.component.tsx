@@ -1,6 +1,6 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
-import { X } from "tvicons";
+import { CrossIcon } from "tvicons";
 import { cn } from "../../utils";
 
 export type LastNotification = {
@@ -51,7 +51,7 @@ export const LastNotifications = ({
     >
       <div className="flex gap-2 items-center">
         <h3>Ваши уведомления</h3>
-        <X className="cursor-pointer" onClick={() => setShowed(false)} />
+        <CrossIcon className="cursor-pointer" onClick={() => setShowed(false)} />
       </div>
       <div
         className={cn(
@@ -77,7 +77,7 @@ export const LastNotifications = ({
           >
             <span>{element.position}.</span>
             <div>{element.text}</div>
-            <X className="cursor-pointer" onClick={() => close(element.id)} />
+            <CrossIcon className="cursor-pointer" onClick={() => close(element.id)} />
           </div>
         ))}
       </div>

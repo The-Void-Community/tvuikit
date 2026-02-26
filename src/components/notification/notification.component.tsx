@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 import { v4 as uuid } from "uuid";
-import { X } from "tvicons";
+import { CrossIcon } from "tvicons";
 
 import { cn } from "../../utils";
 
@@ -87,7 +87,7 @@ export const Notification = ({
         )}
       >
         {typeof text === "string" ? <span>{text}</span> : text}
-        <X
+        <CrossIcon
           className="cursor-pointer hover:opacity-70 transition-opacity"
           onClick={() => close(id)}
         />
